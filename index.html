@@ -2,15 +2,66 @@
 <html>
   <head>
     <meta charset='UTF-8'>
-    <title>A simple Document Management System</title>
+    <title>Document Management System</title>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     <script src='js/dms.js'></script>
     <script src='js/ui.js'></script>
     <script src='js/bindings.js'></script>
     <script src='js/config.js'></script>
+    <script src='js/bootstrap.js'></script>
     <link rel='stylesheet' type='text/css' href='css/style.css' />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
+    
+    <!--- navigation bar-->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <!--- header name?
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Document Management System</a>
+        </div>--->
+    
+        <div class="navbar-left">
+        <button type="button" class="btn btn-default navbar-btn btn-lg" aria-label="Home">
+          <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="btn btn-default navbar-btn btn-lg" aria-label="New doc">
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="btn btn-default navbar-btn btn-lg" aria-label="Files">
+          <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="btn btn-default navbar-btn btn-lg" aria-label="Tags">
+          <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+        </button>
+        </div>
+        
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input text="text" class="form-control form-lg" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default btn-lg" aria-label="Submit">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+        </form>
+        
+        <div class="dropdown navbar-right">
+          <button class="btn btn-default navbar-btn btn-lg dropdown-toggle" type="button" id="dropdownNav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-label="Settings">
+            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownNav">
+            <li>  Logged in as User 1</li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Log out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    
     <div id='loggedOut'>
       <input type='text' id='userName' value='user name'/>
       <button type='button' id='logInButton'>Log in</button>
