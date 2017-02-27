@@ -1,0 +1,104 @@
+body {
+    width: 100%;
+    margin: auto;
+}
+
+#userPane {
+    width: 49%;
+    float: left;
+}
+
+#adminPane {
+    width: 49%;
+    float: right;
+}
+
+#documentsPane {
+    width: 49%;
+    float: left;
+}
+
+#tagsPane {
+    width: 49%;
+    float: right;
+}
+
+/* User management */
+
+.user-name {}
+
+/* Document management */
+
+.document-filter-list {}
+
+.document-list-pane {}
+
+.document-list-pane li {
+    padding-top: 20pt;
+}
+
+.document-name {
+    padding: 5px 10px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    font:2.4em DejaVu Sans, sans-serif;
+    font-size: 14px;
+    cursor:pointer;
+}
+
+.document-name:hover {
+    background-color: #aaaaaa;
+}
+
+.document-information-pane {}
+
+.document-details-pane {}
+
+.document-details {}
+
+.document-control-pane {}
+
+.document-comments-pane {}
+
+.document-history-pane {}
+
+/* Tag management */
+
+.tag-filter-list {}
+
+.tag-list-pane {}
+
+.tag-name {}
+
+.tag-information-pane {}
+
+.tag-details-pane {}
+
+.tag-details {}
+
+.tag-control-pane {}
+
+.tag-history-pane {}
+
+/* Names and values of document/tag properties */
+
+.property-name {}
+
+.property-value {}
+
+/* Comments */
+
+.comment-list {}
+
+.comment-text {}
+
+.comment-info {}
+
+/* Events */
+
+.event-list {}
+
+.event-date {}
+
+.event-description {}
