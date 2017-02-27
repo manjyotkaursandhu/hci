@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <title>A simple Document Management System</title>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src='js/dms.js'></script>
+    <script src='js/ui.js'></script>
+    <script src='js/bindings.js'></script>
+    <script src='js/config.js'></script>
+    <link rel='stylesheet' type='text/css' href='css/style.css' />
+  </head>
+  <body>
+    <div id='loggedOut'>
+      <input type='text' id='userName' value='user name'/>
+      <button type='button' id='logInButton'>Log in</button>
+    </div>
+    <div id='loggedIn'>
+      <div id='userPane'>
+        <span id='loggedInAs'></span>
+        <button type='button' id='logOutButton'>Log out</button>
+      </div>
+      <div id='adminPane'>
+        <button type='button' id='resetButton'>Reset</button>
+        <button type='button' id='addDefaultObjectsButton'>Add default documents and tags</button>
+      </div>
+      <div id='documentsPane'>
+        <div id='documentsMenu'>
+          <button type='button' id='uploadDocumentButton'>Upload document</button>
+          <button type='button' id='listDocumentsButton'>List all documents</button>
+        </div>
+        <div id='documentsMain'>
+          <div id='uploadDocumentPane'></div>
+          <div id='listDocumentsPane'></div>
+        </div>
+      </div>
+      <div id='tagsPane'>
+        <div id='tagsMenu'>
+          <button type='button' id='newTagButton'>Create new tag</button>
+          <button type='button' id='listTagsButton'>List all tags</button>
+        </div>
+        <div id='tagsMain'>
+          <div id='createTagPane'></div>
+          <div id='listTagsPane'></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
