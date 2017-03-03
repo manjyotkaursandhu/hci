@@ -9,11 +9,12 @@
     <script src='js/bindings.js'></script>
     <script src='js/config.js'></script>
     <script src='js/bootstrap.js'></script>
-    <link rel='stylesheet' type='text/css' href='css/style.css' />
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='css/bootstrap.min.css' >
+    <link rel='stylesheet' href='css/style.css' />
   </head>
   <body>
     
+
     <!--- navigation bar-->
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -61,11 +62,17 @@
       </div>
     </nav>
     
-    
+    <!-- log in -->
     <div id='loggedOut'>
-      <input type='text' id='userName' value='user name'/>
-      <button type='button' id='logInButton'>Log in</button>
+      <div id='logInPane'>
+        <div class='input-group input-group-lg'>
+          <span class='input-group-addon' id='basic-addon1'>@</span>
+          <input type='text' class='form-control' placeholder='Username' aria-describedly='basic-addon1' id='userName'/>
+        </div>
+        <button class="btn btn-default btn-lg btn-login" type="button" id="logInButton">Log in</button>
+      </div>
     </div>
+    
     <div id='loggedIn'>
       <div id='userPane'>
         <span id='loggedInAs'></span>

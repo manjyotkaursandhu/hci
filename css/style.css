@@ -23,6 +23,28 @@ body {
     float: right;
 }
 
+#logInPane {
+    width: 49%;
+    position:absolute;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Log in */
+
+/* For log in button */
+.btn-login {
+    width:100%;
+    margin-top:5px;
+    cursor:pointer;
+    transition: all 0.5s;
+    background-color:#42bd5b;
+    color: #FFFFFF;
+    border: 0px;
+}
+
+
+
 /* User management */
 
 .user-name {}
@@ -102,3 +124,14 @@ body {
 .event-date {}
 
 .event-description {}
+
+.btn-primary.raised {
+    box-shadow: 0 3px 0 0 #007299;
+}
+
+.btn-primary.raised:active, .btn-primary.raised.active {
+    background: #33a6cc;
+    box-shadow: none;
+    margin-bottom: -3px;
+    margin-top: 3px;
+}
