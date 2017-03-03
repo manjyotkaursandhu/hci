@@ -1,6 +1,7 @@
 body {
     width: 100%;
     margin: auto;
+    background-color: #70db70;
 }
 
 #userPane {
@@ -24,26 +25,110 @@ body {
 }
 
 #logInPane {
-    width: 49%;
-    position:absolute;
-    margin-left: auto;
-    margin-right: auto;
+    width: 350px;
+    height: 32%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #f5f5f0;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 25px 0 rgba(0, 0, 0, 0.19);
+}
+
+#logInBox {
+    padding: 25px;
+}
+
+#registerPane {
+    width: 350px;
+    height: 57%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #f5f5f0;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 25px 0 rgba(0, 0, 0, 0.19);
+}
+
+#registerDonePane {
+    width: 350px;
+    height: 35%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #f5f5f0;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 25px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* Log in */
 
 /* For log in button */
 .btn-login {
-    width:100%;
-    margin-top:5px;
+    width: 100%;
     cursor:pointer;
-    transition: all 0.5s;
-    background-color:#42bd5b;
+    background-color: #70db70;
     color: #FFFFFF;
+    border: 0px;
+    float: right;
+}
+
+.field-login {
     border: 0px;
 }
 
+/* Colour used for log in bg of log in box, icons, text in fields */
+.logInColour {
+    color: #d6d6c2;
+}
 
+.logInLinks {
+    color: #999999;
+    font-size: 11px;
+    text-align:center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-blue {
+    background-color: #5A51C4;
+}
+
+.register-buttons {
+    cursor: pointer;
+    border: 0px;
+    color: white;
+    width:100%;
+}
+
+hr {
+    border:none;
+    color:white;
+    height:1px;
+    background:#d6d6c2;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#d6d6c2), to(#fff));
+}
+
+.logInTitle {
+    font-size: 12px;
+    font-style: bold;
+    text-transform: uppercase;
+}
+
+.doneRegisterIcon {
+    width: 30%;
+    color: #FF5733;
+}
+
+.hidden {
+    display: none;
+}
 
 /* User management */
 
@@ -124,14 +209,3 @@ body {
 .event-date {}
 
 .event-description {}
-
-.btn-primary.raised {
-    box-shadow: 0 3px 0 0 #007299;
-}
-
-.btn-primary.raised:active, .btn-primary.raised.active {
-    background: #33a6cc;
-    box-shadow: none;
-    margin-bottom: -3px;
-    margin-top: 3px;
-}

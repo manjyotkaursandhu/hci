@@ -5,7 +5,40 @@ $(document).ready(function() {
   let loggedIn = $('#loggedIn');
   let loggedOut = $('#loggedOut');
   
+  $('#userNameRegister').popover();
+  $('#passwordRegister').popover();
+  
+  //when on log in screen and clicking register button
+  $('#signUpLink').click(function() {
+    $('body').css('background-color', '#5A51C4');
+    $('#registerPane').toggleClass('hidden');
+    $('#logInPane').toggleClass('hidden');
+  });
+  
+  //when on register page and click register button
+  $('#registerButton').click(function () {
+    $('body').css('background-color', '#FF5733');
+    $('#registerDonePane').toggleClass('hidden');
+    $('#registerPane').toggleClass('hidden');
+  });
+  
+  //when registering and click cancel button
+  $('#quitRegister').click(function () {
+    $('body').css('background-color', '#70db70');
+    $('#registerPane').toggleClass('hidden');
+    $('#logInPane').toggleClass('hidden');
+  });
+  
+  //when on register successful screen and click return to log in
+  $('#returnToLogInLink').click(function() {
+    $('body').css('background-color', '#70db70');
+    $('#registerDonePane').toggleClass('hidden');
+    $('#logInPane').toggleClass('hidden');
+  });
+
+  
   $('#logInButton').click(function () {
+    $('body').css('background-color', 'white');
     DMS.logIn($('#userName').val(), {
       onsuccess: function () {
         loggedOut.detach();

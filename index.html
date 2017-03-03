@@ -1,19 +1,101 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <meta charset='UTF-8'>
-    <title>Document Management System</title>
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-    <script src='js/dms.js'></script>
-    <script src='js/ui.js'></script>
-    <script src='js/bindings.js'></script>
-    <script src='js/config.js'></script>
-    <script src='js/bootstrap.js'></script>
-    <link rel='stylesheet' href='css/bootstrap.min.css' >
-    <link rel='stylesheet' href='css/style.css' />
-  </head>
-  <body>
-    
+
+<head>
+  <meta charset='UTF-8'>
+  <title>Document Management System</title>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <script src='js/dms.js'></script>
+  <script src='js/ui.js'></script>
+  <script src='js/bindings.js'></script>
+  <script src='js/config.js'></script>
+  <script src='js/bootstrap.js'></script>
+  <link rel='stylesheet' href='css/bootstrap.min.css'>
+  <link rel='stylesheet' href='css/style.css' />
+</head>
+
+<body>
+
+
+  <!-- log in -->
+
+  <div id='loggedOut'>
+    <div id='logInPane' class='img-rounded'>
+      <div id='logInBox'>
+        <div class='form-group has-feedback has-feedback-left'>
+          <input type='text' class='form-control field-login' placeholder='Username' id='userNameLogIn'>
+          <i class='form-control-feedback glyphicon glyphicon-user logInColour'></i>
+        </div>
+
+        <div class='form-group has-feedback has-feedback-left'>
+          <input type='text' class='form-control field-login' placeholder='Password' id='passwordLogIn'>
+          <i class='form-control-feedback glyphicon glyphicon-lock logInColour'></i>
+        </div>
+
+        <button class="btn btn-login" type="button" id="logInButton">Log in</button>
+
+        <a href='#' class='logInLinks' style='float:left'>Forgot password?</a>
+        <a href='#' id='signUpLink' class='logInLinks' style='float:right'>Sign up</a>
+
+      </div>
+
+    </div>
+
+    <div id='registerPane' class='hidden img-rounded'>
+      <div id='logInBox'>
+
+        <div class='logInTitle'>
+          <p class='text-muted pull-left'>Register</p>
+          <button type="button"  id='quitRegister' class="close pull-right" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        
+        </div>
+        <br>
+        <hr />
+
+        <div class='form-group has-feedback has-feedback-left'>
+          <input type='text' class='form-control field-login' placeholder='Username' id='userNameRegister' 
+              data-toggle='popover' data-trigger='focus' data-placement='right' 
+              data-content='Only letters and numbers allowed. 5-15 characters.'>
+          <i class='form-control-feedback glyphicon glyphicon-user logInColour'></i>
+        </div>
+
+        <div class='form-group has-feedback has-feedback-left'>
+          <input type='text' class='form-control field-login' placeholder='Email' id='emailRegister'>
+          <i class='form-control-feedback glyphicon glyphicon-envelope logInColour'></i>
+        </div>
+
+
+        <div class='form-group has-feedback has-feedback-left'>
+          <input type='text' class='form-control field-login' placeholder='Password' id='passwordRegister'
+              data-toggle='popover' data-trigger='focus' data-placement='right' 
+              data-content='6-25 characters.'>
+          <i class='form-control-feedback glyphicon glyphicon-lock logInColour'></i>
+        </div>
+
+        <div class='form-group has-feedback has-feedback-left'>
+          <input type='text' class='form-control field-login' placeholder='Confirm Password' id='confirmPasswordRegister'>
+          <i class='form-control-feedback glyphicon glyphicon-lock logInColour'></i>
+        </div>
+
+        <button class="btn register-buttons btn-blue" type="button" id="registerButton">Register</button>
+
+      </div>
+    </div>
+  </div>
+
+    <div id='registerDonePane' class='hidden img-rounded'>
+      <div id='logInBox'>
+        <span style='font-size:3.0em'class="glyphicon glyphicon-ok-circle doneRegisterIcon" aria-hidden="true"></span>
+        <h3>Register successful!</h3>
+        
+        <hr />
+          <a href='#' id='returnToLogInLink' class='logInLinks' style='text-align:center'>Return to login</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div id='loggedIn'>
 
     <!--- navigation bar-->
     <nav class="navbar navbar-default navbar-static-top">
@@ -22,22 +104,22 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="#">Document Management System</a>
         </div>--->
-    
+
         <div class="navbar-left">
-        <button type="button" class="btn btn-default navbar-btn btn-lg" aria-label="Home">
+          <button type="button" class="btn btn-default navbar-btn btn-lg" aria-label="Home">
           <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
         </button>
-        <button type="button" class="btn btn-default navbar-btn btn-lg" aria-label="New doc">
+          <button type="button" class="btn btn-default navbar-btn btn-lg" aria-label="New doc">
           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
         </button>
-        <button type="button" class="btn btn-default navbar-btn btn-lg" aria-label="Files">
+          <button type="button" class="btn btn-default navbar-btn btn-lg" aria-label="Files">
           <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
         </button>
-        <button type="button" class="btn btn-default navbar-btn btn-lg" aria-label="Tags">
+          <button type="button" class="btn btn-default navbar-btn btn-lg" aria-label="Tags">
           <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
         </button>
         </div>
-        
+
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
             <input text="text" class="form-control form-lg" placeholder="Search">
@@ -46,7 +128,7 @@
           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
           </button>
         </form>
-        
+
         <div class="dropdown navbar-right">
           <button class="btn btn-default navbar-btn btn-lg dropdown-toggle" type="button" id="dropdownNav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-label="Settings">
             <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
@@ -61,47 +143,36 @@
         </div>
       </div>
     </nav>
-    
-    <!-- log in -->
-    <div id='loggedOut'>
-      <div id='logInPane'>
-        <div class='input-group input-group-lg'>
-          <span class='input-group-addon' id='basic-addon1'>@</span>
-          <input type='text' class='form-control' placeholder='Username' aria-describedly='basic-addon1' id='userName'/>
-        </div>
-        <button class="btn btn-default btn-lg btn-login" type="button" id="logInButton">Log in</button>
+
+    <div id='userPane'>
+      <span id='loggedInAs'></span>
+      <button type='button' id='logOutButton'>Log out</button>
+    </div>
+    <div id='adminPane'>
+      <button type='button' id='resetButton'>Reset</button>
+      <button type='button' id='addDefaultObjectsButton'>Add default documents and tags</button>
+    </div>
+    <div id='documentsPane'>
+      <div id='documentsMenu'>
+        <button type='button' id='uploadDocumentButton'>Upload document</button>
+        <button type='button' id='listDocumentsButton'>List all documents</button>
+      </div>
+      <div id='documentsMain'>
+        <div id='uploadDocumentPane'></div>
+        <div id='listDocumentsPane'></div>
       </div>
     </div>
-    
-    <div id='loggedIn'>
-      <div id='userPane'>
-        <span id='loggedInAs'></span>
-        <button type='button' id='logOutButton'>Log out</button>
+    <div id='tagsPane'>
+      <div id='tagsMenu'>
+        <button type='button' id='newTagButton'>Create new tag</button>
+        <button type='button' id='listTagsButton'>List all tags</button>
       </div>
-      <div id='adminPane'>
-        <button type='button' id='resetButton'>Reset</button>
-        <button type='button' id='addDefaultObjectsButton'>Add default documents and tags</button>
-      </div>
-      <div id='documentsPane'>
-        <div id='documentsMenu'>
-          <button type='button' id='uploadDocumentButton'>Upload document</button>
-          <button type='button' id='listDocumentsButton'>List all documents</button>
-        </div>
-        <div id='documentsMain'>
-          <div id='uploadDocumentPane'></div>
-          <div id='listDocumentsPane'></div>
-        </div>
-      </div>
-      <div id='tagsPane'>
-        <div id='tagsMenu'>
-          <button type='button' id='newTagButton'>Create new tag</button>
-          <button type='button' id='listTagsButton'>List all tags</button>
-        </div>
-        <div id='tagsMain'>
-          <div id='createTagPane'></div>
-          <div id='listTagsPane'></div>
-        </div>
+      <div id='tagsMain'>
+        <div id='createTagPane'></div>
+        <div id='listTagsPane'></div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
