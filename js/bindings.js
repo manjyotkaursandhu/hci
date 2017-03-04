@@ -59,6 +59,7 @@ $(document).ready(function() {
   });
 
   $('#logOutButton').click(function () {
+    $('body').css('background-color', '#70db70');
     DMS.logOut();
     $('#loggedInAs').empty();
 

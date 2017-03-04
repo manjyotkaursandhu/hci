@@ -130,6 +130,27 @@ hr {
     display: none;
 }
 
+/* For nav bar */
+.nav-btn-style {
+    text-transform:uppercase;
+    color: white !important;
+    font-weight: bold;
+    letter-spacing:1px;
+}
+
+.navbar-default {
+    background-color: #70db70;
+    border: 0px;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #196619;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    background-color: #70db70;
+    color: #555555;
+}
+
+
 /* User management */
 
 .user-name {}

@@ -17,13 +17,16 @@
 <body>
 
 
-  <!-- log in -->
-
+  <!-- When logged out-->
   <div id='loggedOut'>
+
+    <!-- Pane for logging in -->
     <div id='logInPane' class='img-rounded'>
       <div id='logInBox'>
+
+        <!-- Username/password log in text fields -->
         <div class='form-group has-feedback has-feedback-left'>
-          <input type='text' class='form-control field-login' placeholder='Username' id='userNameLogIn'>
+          <input type='text' class='form-control field-login' placeholder='Username' id='userName'>
           <i class='form-control-feedback glyphicon glyphicon-user logInColour'></i>
         </div>
 
@@ -32,18 +35,19 @@
           <i class='form-control-feedback glyphicon glyphicon-lock logInColour'></i>
         </div>
 
+        <!-- Log in button and forgot pass/sign up links -->
         <button class="btn btn-login" type="button" id="logInButton">Log in</button>
-
         <a href='#' class='logInLinks' style='float:left'>Forgot password?</a>
         <a href='#' id='signUpLink' class='logInLinks' style='float:right'>Sign up</a>
 
       </div>
-
     </div>
 
+    <!-- Pane for registering -->
     <div id='registerPane' class='hidden img-rounded'>
       <div id='logInBox'>
 
+        <!-- Title and quit button -->
         <div class='logInTitle'>
           <p class='text-muted pull-left'>Register</p>
           <button type="button" id='quitRegister' class="close pull-right" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -52,6 +56,7 @@
         <br>
         <hr />
 
+        <!-- Fields for registering -->
         <div class='form-group has-feedback has-feedback-left'>
           <input type='text' class='form-control field-login' placeholder='Username' id='userNameRegister' data-toggle='popover' data-trigger='focus' data-placement='right' data-content='Only letters and numbers allowed. 5-15 characters.'>
           <i class='form-control-feedback glyphicon glyphicon-user logInColour'></i>
@@ -73,100 +78,114 @@
           <i class='form-control-feedback glyphicon glyphicon-lock logInColour'></i>
         </div>
 
+        <!-- Button to complete registeration -->
         <button class="btn register-buttons btn-blue" type="button" id="registerButton">Register</button>
 
       </div>
     </div>
-  </div>
 
-  <div id='registerDonePane' class='hidden img-rounded'>
-    <div id='logInBox'>
-      <span style='font-size:3.0em' class="glyphicon glyphicon-ok-circle doneRegisterIcon" aria-hidden="true"></span>
-      <h3>Register successful!</h3>
 
-      <hr />
-      <a href='#' id='returnToLogInLink' class='logInLinks' style='text-align:center'>Return to login</a>
+    <!-- Registration complete pane -->
+    <div id='registerDonePane' class='hidden img-rounded'>
+      <div id='logInBox'>
+        <span style='font-size:3.0em' class="glyphicon glyphicon-ok-circle doneRegisterIcon" aria-hidden="true"></span>
+        <h3>Register successful!</h3>
+
+        <hr />
+        <a href='#' id='returnToLogInLink' class='logInLinks' style='text-align:center'>Return to login</a>
+      </div>
     </div>
-  </div>
+
 
   </div>
+
+  <!-- If log in successful -->
+
+
+
 
   <div id='loggedIn'>
 
     <!--- navigation bar-->
     <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <!--- header name?
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Document Management System</a>
-        </div>--->
+      <div class="container-fluid">
 
-        <div class="navbar-left">
-          <button type="button" id="resetButton" class="btn btn-default navbar-btn btn-lg" aria-label="Home">
-          <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-        </button>
-          <button type="button" id="uploadDocumentButton" class="btn btn-default navbar-btn btn-lg" aria-label="New doc">
-          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-        </button>
-          <button type="button" class="btn btn-default navbar-btn btn-lg" aria-label="Files">
-          <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
-        </button>
-          <button type="button" class="btn btn-default navbar-btn btn-lg" aria-label="Tags">
-          <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-        </button>
+        <div class='navbar-header'>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>  
+          </button>
         </div>
 
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input text="text" class="form-control form-lg" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default btn-lg" aria-label="Submit">
-          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-          </button>
-        </form>
+        <div class='collapse navbar-collapse navbar-left' id='navbar-collapse'>
+          <ul class='nav navbar-nav'>
+            <li class='active activeNav'><a href='#' id='homeButton' class='nav-btn-style'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home<span class='sr-only'>(current)</span></a></li>
+            <li class='dropdown'>
+              <a href='#' class='dropdown-toggle nav-btn-style' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Documents<span class='caret'></span></a>
+              <ul class='dropdown-menu'>
+                <li><a href="#" id='uploadDocumentButton'><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Upload document</a></li>
+                <li><a href="#" id='listDocumentsButton'><span class="glyphicon glyphicon-file" aria-hidden="true"></span> View documents</a></li>
+              </ul>
+            </li>
+
+            <li class='dropdown'>
+              <a href='#' class='dropdown-toggle nav-btn-style' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>  Tags<span class='caret'></span></a>
+              <ul class='dropdown-menu'>
+                <li><a href="#" id='createTagButton'><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create a tag</a></li>
+                <li><a href="#" id='listTagsButton'><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> View tags</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
 
         <div class="dropdown navbar-right">
-          <button class="btn btn-default navbar-btn btn-lg dropdown-toggle" type="button" id="dropdownNav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-label="Settings">
+          <button class="btn btn-link navbar-btn dropdown-toggle nav-btn-style" type="button" id="dropdownNav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-label="Settings">
             <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownNav">
-            <li><span id='loggedInAs'></span></li>
+            <li><span id='loggedInAs' class="text-align:center"></span></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Account</a></li>
             <li><a href="#" id="logOutButton">Logout</a></li>
+            <li><a href="#" id='resetButton'>Reset</a></li>
+            <li><a href="#" id="addDefaultObjectsButton">Add default documents and tags</a></li>
           </ul>
         </div>
+
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+            <input text="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default" aria-label="Submit">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+        </form>
+
       </div>
     </nav>
+    <!-- currently not in use, dont delete
+      <div id='userPane'></div><div id='adminPane'></div>-->
 
-    <div id='loggedIn'>
-      <div id='userPane'>
-        <span id='loggedInAs'></span>
-      </div>
-      <div id='adminPane'>
-        <button type='button' id='resetButton'>Reset</button>
-        <button type='button' id='addDefaultObjectsButton'>Add default documents and tags</button>
-      </div>
-      <div id='documentsPane'>
-        <div id='documentsMenu'>
+    <!-- empty panes might need to be left as they are cos i think some js methods use them to display stuff still -->
+    <div id='documentsPane'>
+      <div id='documentsMenu'>
 
-          <button type='button' id='listDocumentsButton'>List all documents</button>
-        </div>
-        <div id='documentsMain'>
-          <div id='uploadDocumentPane'></div>
-          <div id='listDocumentsPane'></div>
-        </div>
       </div>
-      <div id='tagsPane'>
-        <div id='tagsMenu'>
-          <button type='button' id='newTagButton'>Create new tag</button>
-          <button type='button' id='listTagsButton'>List all tags</button>
-        </div>
-        <div id='tagsMain'>
-          <div id='createTagPane'></div>
-          <div id='listTagsPane'></div>
-        </div>
+      <div id='documentsMain'>
+        <div id='uploadDocumentPane'></div>
+        <div id='listDocumentsPane'></div>
+      </div>
+    </div>
+    <div id='tagsPane'>
+      <div id='tagsMenu'>
+      </div>
+      <div id='tagsMain'>
+        <div id='createTagPane'></div>
+        <div id='listTagsPane'></div>
       </div>
     </div>
   </div>
