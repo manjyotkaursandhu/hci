@@ -152,20 +152,37 @@ $(document).ready(function() {
     let uploadDocumentPane = $('#uploadDocumentPane');
     uploadDocumentPane.empty().show().siblings().hide();
 
+    //let uploadTitleTest = $('<p/>', { text: 'Upload file' });
+
+    $('#uploadTitle').appendTo($('#uploadDocumentPane'));
+    $('#uploadTitle').toggleClass('hidden');
+    
+    var uploadContents = $('<div>', {id: 'uploadContents', class:'upload-container'});
+    
+    let uploadCancel = $('<button/>', {
+      type: 'button', 
+      class: 'btn btn-default', 
+      text: 'Cancel',
+      click: function() {
+        uploadDocumentPane.hide();
+      }
+    })
+    
     let details = $('<table/>', { 'class': 'document-details' });
 
     let file = $('<input/>', { type: 'file' });
     addProperty(details, 'File', file);
 
-    let additionalOwners = $('<input/>', { type: 'text' });
+    let additionalOwners = $('<input/>', { type: 'text', class:'input-group uploadDocFields' });
     addProperty(details, 'Additional owners', additionalOwners);
     
-    let description = $('<textarea/>');
+    let description = $('<textarea/>', {class: 'input-group uploadDocFields'});
     addProperty(details, 'Description', description);
 
-    let tags = $('<input/>', { type: 'text' });
+    let tags = $('<input/>', { type: 'text', class:'input-group uploadDocFields' });
     let generateTags = $('<button/>', {
       type: 'button',
+      class: 'btn btn-default',
       text: 'Generate tags',
       click: function () {
         tags.val(extractTagNames(description.val()).join(', '));
@@ -182,6 +199,7 @@ $(document).ready(function() {
 
     let uploadButton = $('<button/>', {
       type: 'button',
+      class: 'btn btn-default',
       text: 'Upload',
       click: function () {
         if (file.val() == '') {
@@ -205,13 +223,18 @@ $(document).ready(function() {
           isprivate.is(':checked'), {
             oncomplete: function () {
               uploadDocumentPane.hide();
+              $('#uploadTitle').toggleClass('hidden');
               $('#listDocumentsButton').click();
             }
           });        
       }
     });
     
-    uploadDocumentPane.append(details).append(uploadButton);
+    uploadContents.append(details);
+    uploadDocumentPane.append(uploadContents).append(uploadButton).append(uploadCancel);
+    //uploadDocumentPane.append(details).append(uploadButton);
+    //.append(uploadTitleTest);
+    
   });
 
   $('#listDocumentsButton').click(function () {

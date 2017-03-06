@@ -15,7 +15,7 @@ body {
 }
 
 #documentsPane {
-
+    width: 100%;
 }
 
 #uploadDocumentPane {
@@ -166,9 +166,29 @@ hr {
 
 /* Uploading document */
 
-.uploadTitle {
-    background-color: #006622;
+#uploadTitle {
+    background-color: #003300;
+    position: relative;
     color: white;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 30px;
+}
+
+#upload-container {
+    padding: 20px;
+    position: absolute;
+}
+
+.white-button {
+    background-color: white;
+    color: white;
+}
+
+.uploadDocFields {
+    margin-bottom: 10px;
 }
 /* User management */
 
@@ -202,7 +222,8 @@ hr {
 
 .document-details-pane {}
 
-.document-details {}
+.document-details {
+}
 
 .document-control-pane {}
 
