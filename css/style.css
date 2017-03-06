@@ -15,9 +15,23 @@ body {
 }
 
 #documentsPane {
-    width: 49%;
-    float: left;
+
 }
+
+#uploadDocumentPane {
+    width: 49%;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    float: left;
+    background-color: #f2f2f2;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 25px 0 rgba(0, 0, 0, 0.19);
+}
+
 
 #tagsPane {
     width: 49%;
@@ -150,7 +164,12 @@ hr {
     color: #555555;
 }
 
+/* Uploading document */
 
+.uploadTitle {
+    background-color: #006622;
+    color: white;
+}
 /* User management */
 
 .user-name {}
