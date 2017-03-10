@@ -185,6 +185,7 @@ $(document).ready(function() {
   $('#uploadDocumentButton').click(function () {
     let uploadDocumentPane = $('#uploadDocumentPane');
     uploadDocumentPane.empty().show().siblings().hide();
+    $('#tagsMain').children().empty();
 
     //let uploadTitleTest = $('<p/>', { text: 'Upload file' });
 
@@ -262,6 +263,7 @@ $(document).ready(function() {
             }
           });        
       }
+        
     });
     
     uploadContents.append(details);
@@ -285,7 +287,7 @@ $(document).ready(function() {
 
     filterList.append(generateDocumentFilterItem(documentListPane, filterList));
     refreshDocumentList(documentListPane, filterList);
-     $('#tagsMain').children().empty();
+    $('#tagsMain').children().empty();
   });
   
   // Tag management ************************************************************
@@ -293,6 +295,7 @@ $(document).ready(function() {
   $('#newTagButton').click(function () {
     let createTagPane = $('#createTagPane');
     createTagPane.empty().show().siblings().hide();
+    $('#uploadDocumentPane').hide();
 
     let details = $('<table/>', { 'class': 'tag-details' });
 
@@ -317,6 +320,7 @@ $(document).ready(function() {
           }
         });
       }
+        
     });
     
     createTagPane.append(details).append(createTagButton);
@@ -325,6 +329,7 @@ $(document).ready(function() {
   $('#listTagsButton').click(function () {
     let listTagsPane = $('#listTagsPane');
     listTagsPane.empty().show().siblings().hide();
+    $('#uploadDocumentPane').hide();
 
     let filterList = $('<ol/>', {
       'class': 'tag-filter-list'
