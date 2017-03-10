@@ -244,6 +244,7 @@ $(document).ready(function() {
   });
 
   $('#listDocumentsButton').click(function () {
+    
     let listDocumentsPane = $('#listDocumentsPane');
     listDocumentsPane.empty().show().siblings().hide();
 
@@ -256,6 +257,7 @@ $(document).ready(function() {
 
     filterList.append(generateDocumentFilterItem(documentListPane, filterList));
     refreshDocumentList(documentListPane, filterList);
+     $('#tagsMain').children().empty();
   });
   
   // Tag management ************************************************************
@@ -274,7 +276,7 @@ $(document).ready(function() {
     
     let description = $('<textarea/>');
     addProperty(details, 'Description', description);
-
+    $('#documentsMain').children().empty();
     let createTagButton = $('<button/>', {
       type: 'button',
       text: 'Create tag',
@@ -302,7 +304,7 @@ $(document).ready(function() {
     let tagListPane = $('<div/>', {
       'class': 'tag-list-pane'
     }).appendTo(listTagsPane);
-
+    $('#documentsMain').children().empty();
     filterList.append(generateTagFilterItem(tagListPane, filterList));
     refreshTagList(tagListPane, filterList);
   });
