@@ -8,6 +8,34 @@ $(document).ready(function() {
   $('#userNameRegister').popover();
   $('#passwordRegister').popover();
   
+  //when on log in screen and clicking forgot password
+  $('#forgotpassword').click(function() {
+    $('body').css('background-color', '#5A51C4');
+    $('#passwordPane').toggleClass('hidden');
+    $('#logInPane').toggleClass('hidden');
+  });
+  
+  //when forgotten password and click cancel button
+  $('#quitPassword').click(function () {
+    $('body').css('background-color', '#70db70');
+    $('#passwordPane').toggleClass('hidden');
+    $('#logInPane').toggleClass('hidden');
+  });
+  
+ //when on forgot password page and click send button
+  $('#sendButton').click(function () {
+    $('body').css('background-color', '#FF5733');
+    $('#passwordPane').toggleClass('hidden');
+    $('#sentPane').toggleClass('hidden');
+  });
+  
+//when on sent screen and click return to log in
+  $('#returnToLogin').click(function() {
+    $('body').css('background-color', '#70db70');
+    $('#sentPane').toggleClass('hidden');
+    $('#logInPane').toggleClass('hidden');
+  });
+
   //when on log in screen and clicking register button
   $('#signUpLink').click(function() {
     $('body').css('background-color', '#5A51C4');

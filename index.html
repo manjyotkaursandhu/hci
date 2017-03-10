@@ -37,7 +37,7 @@
 
         <!-- Log in button and forgot pass/sign up links -->
         <button class="btn btn-login" type="button" id="logInButton">Log in</button>
-        <a href='#' class='logInLinks' style='float:left'>Forgot password?</a>
+        <a href='#' id= 'forgotpassword' class='logInLinks' style='float:left'>Forgot password?</a>
         <a href='#' id='signUpLink' class='logInLinks' style='float:right'>Sign up</a>
 
       </div>
@@ -84,7 +84,6 @@
       </div>
     </div>
 
-
     <!-- Registration complete pane -->
     <div id='registerDonePane' class='hidden img-rounded'>
       <div id='logInBox'>
@@ -95,8 +94,40 @@
         <a href='#' id='returnToLogInLink' class='logInLinks' style='text-align:center'>Return to login</a>
       </div>
     </div>
+  <!-- Pane for forgotten password -->
+    <div id='passwordPane' class='hidden img-rounded'>
+      <div id='logInBox'>
 
+        <!-- Title and quit button -->
+        <div class='logInTitle'>
+          <p class='text-muted pull-left'>Password Reset</p>
+          <button type="button" id='quitPassword' class="close pull-right" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
+        </div>
+        <br>
+        <hr />
+
+        <!-- Fields for email -->
+        <div class='form-group has-feedback has-feedback-left'>
+          <input type='text' class='form-control field-login' placeholder='Email' id='passwordEmail' data-toggle='popover' data-trigger='focus' data-placement='right' data-content='Only letters and numbers allowed. 5-15 characters.'>
+          <i class='form-control-feedback glyphicon glyphicon-user logInColour'></i>
+        </div>
+
+        <!-- Button to complete password -->
+        <button class="btn register-buttons btn-blue" type="button" id="sendButton">Send</button>
+
+      </div>
+    </div>
+    <!-- email sent pane -->
+    <div id='sentPane' class='hidden img-rounded'>
+      <div id='logInBox'>
+        <span style='font-size:3.0em' class="glyphicon glyphicon-ok-circle doneRegisterIcon" aria-hidden="true"></span>
+        <h3>Email Sent!</h3>
+
+        <hr />
+        <a href='#' id='returnToLogin' class='logInLinks' style='text-align:center'>Return to login</a>
+      </div>
+    </div>
   </div>
 
   <!-- If log in successful -->
