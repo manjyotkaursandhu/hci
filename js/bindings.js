@@ -1,10 +1,10 @@
 $(document).ready(function() {
-  
+
   // User management ***********************************************************
 
   let loggedIn = $('#loggedIn');
   let loggedOut = $('#loggedOut');
-  
+
   $('#userNameRegister').popover();
   $('#passwordRegister').popover();
   
@@ -42,21 +42,21 @@ $(document).ready(function() {
     $('#registerPane').toggleClass('hidden');
     $('#logInPane').toggleClass('hidden');
   });
-  
+
   //when on register page and click register button
-  $('#registerButton').click(function () {
+  $('#registerButton').click(function() {
     $('body').css('background-color', '#FF5733');
     $('#registerDonePane').toggleClass('hidden');
     $('#registerPane').toggleClass('hidden');
   });
-  
+
   //when registering and click cancel button
-  $('#quitRegister').click(function () {
+  $('#quitRegister').click(function() {
     $('body').css('background-color', '#70db70');
     $('#registerPane').toggleClass('hidden');
     $('#logInPane').toggleClass('hidden');
   });
-  
+
   //when on register successful screen and click return to log in
   $('#returnToLogInLink').click(function() {
     $('body').css('background-color', '#70db70');
@@ -64,14 +64,14 @@ $(document).ready(function() {
     $('#logInPane').toggleClass('hidden');
   });
 
-  
-  $('#logInButton').click(function () {
+
+  $('#logInButton').click(function() {
     $('body').css('background-color', 'white');
     DMS.logIn($('#userName').val(), {
-      onsuccess: function () {
+      onsuccess: function() {
         loggedOut.detach();
         $(document.body).append(loggedIn.show());
-        
+
         $('#loggedInAs')
           .append('Logged in as ')
           .append($('<span/>', {
@@ -80,13 +80,13 @@ $(document).ready(function() {
         $('#documentsMain').children().empty().hide();
         $('#tagsMain').children().empty().hide();
       },
-      onerror: function () {
+      onerror: function() {
         alert("Unable to log in.");
       }
     });
   });
 
-  $('#logOutButton').click(function () {
+  $('#logOutButton').click(function() {
     $('body').css('background-color', '#70db70');
     DMS.logOut();
     $('#loggedInAs').empty();
@@ -109,122 +109,129 @@ $(document).ready(function() {
     $('#tagsMain').children().empty();
   });
 
-  $('#addDefaultObjectsButton').click(function () {
+  $('#addDefaultObjectsButton').click(function() {
     // From National Geographic: Photo of the Day - Best of January
-    
+
     DMS.uploadDocument(
       'Carved-in-Stone.jpeg', 'Carved-in-Stone.jpeg', ['NatGeo'],
-      'Glacial river water conjures an evanescent mist at the Norwegian rock '+
-        'formation known as Marmorslottet (the Marble Castle). Located in Mo i ' +
-        'Rana, the Marble Castle is limestone that has been carved into ' +
-        'sinuous-looking curves by the rushing river fed by the Svartisen ' +
-        'glacier, Norway’s second largest.',
-      ['river', 'water', 'Norwegian', 'Marmorslottet', 'Marble Castle',
-       'Mo i Rana', 'limestone', 'Svartisen', 'glacier', 'Norway'],
-    false);
+      'Glacial river water conjures an evanescent mist at the Norwegian rock ' +
+      'formation known as Marmorslottet (the Marble Castle). Located in Mo i ' +
+      'Rana, the Marble Castle is limestone that has been carved into ' +
+      'sinuous-looking curves by the rushing river fed by the Svartisen ' +
+      'glacier, Norway’s second largest.', ['river', 'water', 'Norwegian', 'Marmorslottet', 'Marble Castle',
+        'Mo i Rana', 'limestone', 'Svartisen', 'glacier', 'Norway'
+      ],
+      false);
 
 
     DMS.uploadDocument(
       'We-Have-Liftoff.jpeg', 'We-Have-Liftoff.jpeg', ['NatGeo'],
       'Along the Zambezi River in northern Namibia, a giant flock of southern ' +
-        'carmine bee-eaters (Merops nubicoides) scatters into the ' +
-        'air. According to Your Shot photographer Jason Boswell, these birds ' +
-        'were taking off as a group of bird ringers attempted to ring a few ' +
-        'hundred of them to gather more information on where they go when they' +
-        'leave these breeding grounds. Today is National Bird Day in the United ' +
-        'States; the holiday coincides with the Christmas Bird Count, a ' +
-        'citizen-led project to take stock of the health of the country’s ' +
-        'birds.',
-      ['Zambezi River', 'Namibia', 'bee', 'Jason Boswell', 'birds'],
-    false);
+      'carmine bee-eaters (Merops nubicoides) scatters into the ' +
+      'air. According to Your Shot photographer Jason Boswell, these birds ' +
+      'were taking off as a group of bird ringers attempted to ring a few ' +
+      'hundred of them to gather more information on where they go when they' +
+      'leave these breeding grounds. Today is National Bird Day in the United ' +
+      'States; the holiday coincides with the Christmas Bird Count, a ' +
+      'citizen-led project to take stock of the health of the country’s ' +
+      'birds.', ['Zambezi River', 'Namibia', 'bee', 'Jason Boswell', 'birds'],
+      false);
 
     DMS.uploadDocument(
       'Hanging-Around.jpeg', 'Hanging-Around.jpeg', ['NatGeo'],
       'Photographer Mike Melnotte was out for a walk with his family near ' +
-        'Fort Fisher in North Carolina. Near a grove of oak trees, he came ' +
-        'across some friends relaxing and was struck by the way they sat in ' +
-        'silence and simply watched the sunset.',
-      ['Mike Melnotte', 'Fort Fisher', 'North Carolina', 'oak', 'trees',
-       'friends', 'sunset'],
-    false);
+      'Fort Fisher in North Carolina. Near a grove of oak trees, he came ' +
+      'across some friends relaxing and was struck by the way they sat in ' +
+      'silence and simply watched the sunset.', ['Mike Melnotte', 'Fort Fisher', 'North Carolina', 'oak', 'trees',
+        'friends', 'sunset'
+      ],
+      false);
 
     DMS.uploadDocument(
       'You-Can-Run.jpeg', 'You-Can-Run.jpeg', ['NatGeo'],
       'On the shore of Kurile Lake, a remnant of the volcano that was once ' +
-        'active on this site in Kamchatka, Russia, competition for a meal can ' +
-        'be fierce—and this brown bear isn’t letting his smaller rival get ' +
-        'close to steal any salmon away. This photograph wasn’t easy to come ' +
-        'across for Your Shot photographer Giuseppe D’amico—it required ' +
-        '“stalking of the small beaches on the shores of the lake. This picture ' +
-        'is the result of these ambushes and was taken in the early morning, ' +
-        'from a distance of about 30 meters.” Despite the battle for a fish ' +
-        'here, Kurile Lake is one of the world’s largest spawning sites for ' +
-        'sockeye salmon.',
-      ['Kurile Laku', 'volcano', 'Kamchatka', 'Russia', 'brown bear',
-       'Giuseppe D’amico', 'battle', 'fish', 'Kurile Lake', 'salmon'],
-    false);
-    
+      'active on this site in Kamchatka, Russia, competition for a meal can ' +
+      'be fierce—and this brown bear isn’t letting his smaller rival get ' +
+      'close to steal any salmon away. This photograph wasn’t easy to come ' +
+      'across for Your Shot photographer Giuseppe D’amico—it required ' +
+      '“stalking of the small beaches on the shores of the lake. This picture ' +
+      'is the result of these ambushes and was taken in the early morning, ' +
+      'from a distance of about 30 meters.” Despite the battle for a fish ' +
+      'here, Kurile Lake is one of the world’s largest spawning sites for ' +
+      'sockeye salmon.', ['Kurile Laku', 'volcano', 'Kamchatka', 'Russia', 'brown bear',
+        'Giuseppe D’amico', 'battle', 'fish', 'Kurile Lake', 'salmon'
+      ],
+      false);
+
     DMS.uploadDocument(
       'Wipeout.jpeg', 'Wipeout.jpeg', ['NatGeo'],
       'A riderless surfboard soars above a massive wave on Peahi, a surf' +
-        'break on Maui’s north shore. This image was captured during the Pe’ahi' +
-        'Challenge, a big-wave surfing event. Peahi, also known as Jaws, “is a' +
-        'spectacle in the truest sense of the word, with waves up to 80 [feet' +
-        'tall] on the biggest days,” photographer Lyle Krannichfeld says. “This' +
-        'particular frame stood out to me because of the splash of color from' +
-        'the board and the questions it raises for the viewer.”',
-      ['surfboard', 'wave', 'Peahi', 'Maui', 'Pe’ahi Challenge', 'Lyle Krannichfeld'],
-    false);
+      'break on Maui’s north shore. This image was captured during the Pe’ahi' +
+      'Challenge, a big-wave surfing event. Peahi, also known as Jaws, “is a' +
+      'spectacle in the truest sense of the word, with waves up to 80 [feet' +
+      'tall] on the biggest days,” photographer Lyle Krannichfeld says. “This' +
+      'particular frame stood out to me because of the splash of color from' +
+      'the board and the questions it raises for the viewer.”', ['surfboard', 'wave', 'Peahi', 'Maui', 'Pe’ahi Challenge', 'Lyle Krannichfeld'],
+      false);
 
     $('#listDocumentsButton').click();
     $('#listTagsButton').click();
   });
-  
+
   // Document management *******************************************************
-  
-  $('#uploadDocumentButton').click(function () {
+
+  $('#uploadDocumentButton').click(function() {
     let uploadDocumentPane = $('#uploadDocumentPane');
+    
     uploadDocumentPane.empty().show().siblings().hide();
     $('#tagsMain').children().empty();
-
-    //let uploadTitleTest = $('<p/>', { text: 'Upload file' });
-
-    $('#uploadTitle').appendTo($('#uploadDocumentPane'));
-    $('#uploadTitle').toggleClass('hidden');
     
-    var uploadContents = $('<div>', {id: 'uploadContents', class:'upload-container'});
-    
-    let uploadCancel = $('<button/>', {
-      type: 'button', 
-      class: 'btn btn-default', 
-      text: 'Cancel',
-      click: function() {
-        uploadDocumentPane.hide();
-      }
-    })
-    
-    let details = $('<table/>', { 'class': 'document-details' });
+    ($'#uploadTitle').appendTo('#uploadDocumentPane');
+    ($'#uploadTitle.toggleClass('hidden');
+   
+   // $('#uploadTitle').appendTo($('#uploadDocumentPane'));
+    //$('#uploadTitle').show();
 
-    let file = $('<input/>', { type: 'file' });
+    let uploadContents = $('<div>', {
+      id: 'uploadContents',
+      class: 'upload-container'
+    });
+
+    let details = $('<table/>', {
+      'class': 'document-details'
+    });
+
+    let file = $('<input/>', {
+      type: 'file'
+    });
     addProperty(details, 'File', file);
 
-    let additionalOwners = $('<input/>', { type: 'text', class:'input-group uploadDocFields' });
+    let additionalOwners = $('<input/>', {
+      type: 'text',
+      class: 'input-group uploadDocFields'
+    });
     addProperty(details, 'Additional owners', additionalOwners);
-    
-    let description = $('<textarea/>', {class: 'input-group uploadDocFields'});
+
+    let description = $('<textarea/>', {
+      class: 'input-group uploadDocFields'
+    });
     addProperty(details, 'Description', description);
 
-    let tags = $('<input/>', { type: 'text', class:'input-group uploadDocFields' });
+    let tags = $('<input/>', {
+      type: 'text',
+      class: 'input-group uploadDocFields'
+    });
     let generateTags = $('<button/>', {
       type: 'button',
       class: 'btn btn-default',
       text: 'Generate tags',
-      click: function () {
+      click: function() {
         tags.val(extractTagNames(description.val()).join(', '));
       }
     });
+    
     addProperty(details, 'Tags',
-                $('<span/>').append(tags).append(generateTags));
+      $('<span/>').append(tags).append(generateTags));
 
     let isprivate = $('<input/>', {
       type: 'checkbox',
@@ -232,11 +239,12 @@ $(document).ready(function() {
     });
     addProperty(details, 'Is private', isprivate);
 
+
     let uploadButton = $('<button/>', {
       type: 'button',
       class: 'btn btn-default',
       text: 'Upload',
-      click: function () {
+      click: function() {
         if (file.val() == '') {
           alert('Please select a file.');
           return;
@@ -251,30 +259,32 @@ $(document).ready(function() {
         DMS.uploadDocument(
           fileName,
           fileName, // At the moment, we are not storing the actual
-                    // file, but just their name.
+          // file, but just their name.
           ownerList,
           description.val(),
           tagList,
           isprivate.is(':checked'), {
-            oncomplete: function () {
+            oncomplete: function() {
               uploadDocumentPane.hide();
               $('#uploadTitle').toggleClass('hidden');
-              $('#listDocumentsButton').click();
+              $('#listDocumentsButton').click('hidden');
             }
-          });        
+          });
       }
         
     });
-    
+
     uploadContents.append(details);
-    uploadDocumentPane.append(uploadContents).append(uploadButton).append(uploadCancel);
-    //uploadDocumentPane.append(details).append(uploadButton);
-    //.append(uploadTitleTest);
+    uploadDocumentPane.append(uploadContents).append(uploadButton);
+
+    $('#quitUpload').click(function() {
+      $('#uploadDocumentPane').hide();
+      $('#uploadTitle').toggleClass('hidden');
+    });
     
   });
 
-  $('#listDocumentsButton').click(function () {
-    
+  $('#listDocumentsButton').click(function() {
     let listDocumentsPane = $('#listDocumentsPane');
     listDocumentsPane.empty().show().siblings().hide();
 
@@ -289,32 +299,38 @@ $(document).ready(function() {
     refreshDocumentList(documentListPane, filterList);
     $('#tagsMain').children().empty();
   });
-  
+
   // Tag management ************************************************************
-  
-  $('#newTagButton').click(function () {
+
+  $('#newTagButton').click(function() {
     let createTagPane = $('#createTagPane');
     createTagPane.empty().show().siblings().hide();
     $('#uploadDocumentPane').hide();
 
-    let details = $('<table/>', { 'class': 'tag-details' });
+    let details = $('<table/>', {
+      'class': 'tag-details'
+    });
 
-    let name = $('<input/>', { type: 'text' });
+    let name = $('<input/>', {
+      type: 'text'
+    });
     addProperty(details, 'Name', name);
 
-    let additionalOwners = $('<input/>', { type: 'text' });
+    let additionalOwners = $('<input/>', {
+      type: 'text'
+    });
     addProperty(details, 'Additional owners', additionalOwners);
-    
+
     let description = $('<textarea/>');
     addProperty(details, 'Description', description);
     $('#documentsMain').children().empty();
     let createTagButton = $('<button/>', {
       type: 'button',
       text: 'Create tag',
-      click: function () {
+      click: function() {
         let ownerList = parseCSV(additionalOwners.val());
         DMS.createTag(name.val(), ownerList, description.val(), {
-          oncomplete: function () {
+          oncomplete: function() {
             createTagPane.hide();
             $('#listTagsButton').click();
           }
@@ -322,11 +338,11 @@ $(document).ready(function() {
       }
         
     });
-    
+
     createTagPane.append(details).append(createTagButton);
   });
 
-  $('#listTagsButton').click(function () {
+  $('#listTagsButton').click(function() {
     let listTagsPane = $('#listTagsPane');
     listTagsPane.empty().show().siblings().hide();
     $('#uploadDocumentPane').hide();
