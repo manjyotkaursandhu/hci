@@ -81,6 +81,32 @@ body {
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 25px 0 rgba(0, 0, 0, 0.19);
 }
 
+#passwordPane {
+    width: 350px;
+    height: 32%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #f5f5f0;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 25px 0 rgba(0, 0, 0, 0.19);
+}
+
+#sentPane {
+    width: 350px;
+    height: 32%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #f5f5f0;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 25px 0 rgba(0, 0, 0, 0.19);
+}
+
 /* Log in */
 
 /* For log in button */
