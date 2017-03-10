@@ -68,7 +68,13 @@ $(document).ready(function() {
   });
 
   // Admin *********************************************************************
+    //Home button to clear the UI when clicked
+    $('#homeButton').click(function(){
+        $('#documentsMain').children().empty();
+        $('#tagsMain').children().empty();
+        $('#uploadDocumentPane').hide();
   
+    });  
   $('#resetButton').click(function () {
     DMS.clearStores();
     $('#documentsMain').children().empty();
