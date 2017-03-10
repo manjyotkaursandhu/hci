@@ -186,8 +186,8 @@ $(document).ready(function() {
     uploadDocumentPane.empty().show().siblings().hide();
     $('#tagsMain').children().empty();
     
-    ($'#uploadTitle').appendTo('#uploadDocumentPane');
-    ($'#uploadTitle.toggleClass('hidden');
+    $('#uploadTitle').appendTo('#uploadDocumentPane');
+    $('#uploadTitle').toggleClass('hidden');
    
    // $('#uploadTitle').appendTo($('#uploadDocumentPane'));
     //$('#uploadTitle').show();
