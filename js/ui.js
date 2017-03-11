@@ -119,10 +119,10 @@ function generateDocumentFilterItem (pane, filterList) {
       refreshDocumentList(pane, filterList);
     }
   }); 
-  filterItem.append(criterion).append(pattern).append(addFilterButton);
+  /*filterItem.append(criterion).append(pattern).append(addFilterButton);
   criterion.before('Filter results by ');
   criterion.after(': ');
-  return filterItem;
+  return filterItem;*/
 }
 
 function refreshDocumentList (targetPane, filterList) {
