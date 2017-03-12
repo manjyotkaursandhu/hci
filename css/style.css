@@ -6,6 +6,7 @@ body {
     width: 100%;
     min-height: 100%;
     background-color: #70db70;
+    
 }
 
 .overlay {
@@ -32,17 +33,23 @@ body {
     float: right;
 }
 
-
+#loggedIn{
+}
 #documentsPane {
-    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
     background: transparent;
-    width: 33%;
+    width: 100%;
     height: 100%;
+}
+#listDocumentsPane{
+    background: transparent;
+    height: 100%;
+    width: 100%;
 }
 #documentsMain{
     background: transparent;
     width: 100%;
-    height: 100%;}
+    height: 100%;
+}
 
 
 #uploadDocumentPane {
@@ -263,22 +270,24 @@ hr {
 }
 
 .document-list-pane {
-    margin-top: -25px;
+    margin-top: -80px;
     background: transparent;
-    width: 250px;
-    height: 1080px;
+    width: 33%;
+    height: 100vw;
+    border-right: 2px solid #d3d3d3;
     
 }
 
 .document-list-pane li {
     list-style-type: none;
-    padding-top: 30pt;
+    padding-top: 50pt;
+    
     
 }
 
 .document-name {
-    width: 400px;
-    box-shadow: 0 4px 30px 0 rgba(0,0,0,0.2);
+    width: 250px;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     padding: 20px 30px;
     color: black;
@@ -286,6 +295,7 @@ hr {
     font:2.4em DejaVu Sans, sans-serif;
     font-size: 14px;
     cursor:pointer;
+    position: absolute;
     
 }
 
@@ -295,12 +305,14 @@ hr {
 }
 
 .document-information-pane {  
-    margin-top: 10px;
+    margin-left: 310px;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
     width: 250px; 
 }
 
-.document-details-pane {}
+.document-details-pane {
+    
+}
 
 .document-details {
 }
