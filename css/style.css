@@ -71,6 +71,7 @@ body {
     width: 100%;
     height: 100%;
     float: left;
+    
 }
 
 #logInPane {
@@ -273,7 +274,7 @@ hr {
     margin-top: -80px;
     background: transparent;
     width: 25%;
-    height: 100vw;
+    height: 125vw;
     border-right: 2px solid #d3d3d3;
     
 }
@@ -325,13 +326,41 @@ hr {
 
 /* Tag management */
 
-.tag-filter-list {}
+.tag-filter-list {
+    
+}
 
-.tag-list-pane {}
+.tag-list-pane {
+    margin-top: -80px;
+    background: transparent;
+    width: 25%;
+    height: 125vw;
+    border-right: 2px solid #d3d3d3;
+    }
+.tag-list-pane li {
+    list-style-type: none;
+    padding-top: 30pt; 
+}
+.tag-name {
+    width: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 20px 30px;
+    color: black;
+    text-align: center+;
+    font:2.4em DejaVu Sans, sans-serif;
+    font-size: 14px;
+    cursor:pointer;
+    position: absolute;}
 
-.tag-name {}
-
-.tag-information-pane {}
+.tag-name:hover {
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.2);
+    background-color: #aaaaaa;
+}
+.tag-information-pane {
+    margin-left: 350px;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    width: 250px; }
 
 .tag-details-pane {}
 
