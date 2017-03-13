@@ -31,23 +31,13 @@ body {
 }
 
 #uploadDocumentPane {
-    width: 49%;
-    height: 400px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    float: left;
-    background-color: #f2f2f2;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 25px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
 }
 
 
 #tagsPane {
     width: 49%;
-    float: right;
+    float: left;
 }
 
 #logInPane {
@@ -83,6 +73,32 @@ body {
 #registerDonePane {
     width: 350px;
     height: 35%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #f5f5f0;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 25px 0 rgba(0, 0, 0, 0.19);
+}
+
+#passwordPane {
+    width: 350px;
+    height: 32%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #f5f5f0;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 25px 0 rgba(0, 0, 0, 0.19);
+}
+
+#sentPane {
+    width: 350px;
+    height: 32%;
     position: absolute;
     top:0;
     bottom: 0;
@@ -178,38 +194,37 @@ hr {
 
 /* Uploading document */
 
-#uploadTitle {
-    background-color: #70db70;
-    position: relative;
-    color: white;
-    width: 100%;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-    padding: 30px;
-}
-
+/* Contains all fields for an upload */
 .upload-container {
     width: 100%;
     padding: 20px;
+    margin-left: -30px;
     position: relative;
-    margin-left: 30px;
 }
 
+/* Formatting for the upload button */
 .upload-buttons {
-    padding: 20px;
     float: right;
+    padding: 10px;
 }
 
-.white-button {
-    background-color: white;
-    color: white;
-}
-
+/* Formatting for the upload doc fields */
 .uploadDocFields {
-    margin-bottom: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
     width: 100%;
 }
+
+/* Formatting applied to the header and footer of upload doc modal */
+.upload-header {
+    background-color:#70db70;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 0px;
+}
+
 /* User management */
 
 .user-name {}
@@ -222,6 +237,7 @@ hr {
 
 .document-list-pane li {
     padding-top: 20pt;
+    list-style-type: none;
 }
 
 .document-name {
@@ -243,6 +259,7 @@ hr {
 .document-details-pane {}
 
 .document-details {
+    width: 100%;
 }
 
 .document-control-pane {}
@@ -271,9 +288,15 @@ hr {
 
 /* Names and values of document/tag properties */
 
-.property-name {}
+.property-name {
+    font-weight: bold;
+    text-align: right;
+    padding: 20px;
+}
 
-.property-value {}
+.property-value {
+
+}
 
 /* Comments */
 

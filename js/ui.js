@@ -1,13 +1,9 @@
-/*******************************************************************************
-    Common
-*******************************************************************************/
-
 function addProperty (target, name, value) {
   target.append(
     $('<tr>')
       .append($('<td>')
               .addClass('property-name')
-              .text(name + ':'))
+              .text(name))
       .append($('<td>')
               .addClass('property-value')
               .append(value))

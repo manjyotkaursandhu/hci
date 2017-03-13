@@ -7,6 +7,34 @@ $(document).ready(function() {
 
   $('#userNameRegister').popover();
   $('#passwordRegister').popover();
+  
+  //when on log in screen and clicking forgot password
+  $('#forgotpassword').click(function() {
+    $('body').css('background-color', '#5A51C4');
+    $('#passwordPane').toggleClass('hidden');
+    $('#logInPane').toggleClass('hidden');
+  });
+  
+  //when forgotten password and click cancel button
+  $('#quitPassword').click(function () {
+    $('body').css('background-color', '#70db70');
+    $('#passwordPane').toggleClass('hidden');
+    $('#logInPane').toggleClass('hidden');
+  });
+  
+ //when on forgot password page and click send button
+  $('#sendButton').click(function () {
+    $('body').css('background-color', '#FF5733');
+    $('#passwordPane').toggleClass('hidden');
+    $('#sentPane').toggleClass('hidden');
+  });
+  
+//when on sent screen and click return to log in
+  $('#returnToLogin').click(function() {
+    $('body').css('background-color', '#70db70');
+    $('#sentPane').toggleClass('hidden');
+    $('#logInPane').toggleClass('hidden');
+  });
 
   //when on log in screen and clicking register button
   $('#signUpLink').click(function() {
@@ -68,8 +96,14 @@ $(document).ready(function() {
   });
 
   // Admin *********************************************************************
-
-  $('#resetButton').click(function() {
+    //Home button to clear the UI when clicked
+    $('#homeButton').click(function(){
+        $('#documentsMain').children().empty();
+        $('#tagsMain').children().empty();
+        $('#uploadDocumentPane').hide();
+  
+    });  
+  $('#resetButton').click(function () {
     DMS.clearStores();
     $('#documentsMain').children().empty();
     $('#tagsMain').children().empty();
@@ -146,16 +180,9 @@ $(document).ready(function() {
 
   // Document management *******************************************************
 
-  $('#uploadDocumentButton').click(function() {
+  $('#uploadDocumentButton').show(function() {
     let uploadDocumentPane = $('#uploadDocumentPane');
-    
     uploadDocumentPane.empty().show().siblings().hide();
-    
-    $('#uploadTitle').appendTo('#uploadDocumentPane');
-    $('#uploadTitle').toggleClass('hidden');
-   
-   // $('#uploadTitle').appendTo($('#uploadDocumentPane'));
-    //$('#uploadTitle').show();
 
     let uploadContents = $('<div>', {
       id: 'uploadContents',
@@ -167,25 +194,27 @@ $(document).ready(function() {
     });
 
     let file = $('<input/>', {
-      type: 'file'
+      type: 'file',
+      class: 'filestyle uploadDocFields'
     });
     addProperty(details, 'File', file);
 
     let additionalOwners = $('<input/>', {
       type: 'text',
-      class: 'input-group uploadDocFields'
+      class: 'input-group form-control uploadDocFields'
     });
     addProperty(details, 'Additional owners', additionalOwners);
 
     let description = $('<textarea/>', {
-      class: 'input-group uploadDocFields'
+      class: 'input-group form-control uploadDocFields'
     });
     addProperty(details, 'Description', description);
 
     let tags = $('<input/>', {
       type: 'text',
-      class: 'input-group uploadDocFields'
+      class: 'input-group form-control uploadDocFields'
     });
+    
     let generateTags = $('<button/>', {
       type: 'button',
       class: 'btn btn-default',
@@ -207,7 +236,7 @@ $(document).ready(function() {
 
     let uploadButton = $('<button/>', {
       type: 'button',
-      class: 'btn btn-default',
+      class: 'btn btn-default upload-buttons',
       text: 'Upload',
       click: function() {
         if (file.val() == '') {
@@ -231,20 +260,15 @@ $(document).ready(function() {
           isprivate.is(':checked'), {
             oncomplete: function() {
               uploadDocumentPane.hide();
-              $('#uploadTitle').toggleClass('hidden');
-              $('#listDocumentsButton').click('hidden');
+              $('#listDocumentsButton').click();
             }
           });
       }
+        
     });
 
     uploadContents.append(details);
     uploadDocumentPane.append(uploadContents).append(uploadButton);
-
-    $('#quitUpload').click(function() {
-      $('#uploadDocumentPane').hide();
-      $('#uploadTitle').toggleClass('hidden');
-    });
     
   });
 
@@ -261,6 +285,7 @@ $(document).ready(function() {
 
     filterList.append(generateDocumentFilterItem(documentListPane, filterList));
     refreshDocumentList(documentListPane, filterList);
+    $('#tagsMain').children().empty();
   });
 
   // Tag management ************************************************************
@@ -268,6 +293,7 @@ $(document).ready(function() {
   $('#newTagButton').click(function() {
     let createTagPane = $('#createTagPane');
     createTagPane.empty().show().siblings().hide();
+    $('#uploadDocumentPane').hide();
 
     let details = $('<table/>', {
       'class': 'tag-details'
@@ -285,7 +311,7 @@ $(document).ready(function() {
 
     let description = $('<textarea/>');
     addProperty(details, 'Description', description);
-
+    $('#documentsMain').children().empty();
     let createTagButton = $('<button/>', {
       type: 'button',
       text: 'Create tag',
@@ -298,6 +324,7 @@ $(document).ready(function() {
           }
         });
       }
+        
     });
 
     createTagPane.append(details).append(createTagButton);
@@ -306,6 +333,7 @@ $(document).ready(function() {
   $('#listTagsButton').click(function() {
     let listTagsPane = $('#listTagsPane');
     listTagsPane.empty().show().siblings().hide();
+    $('#uploadDocumentPane').hide();
 
     let filterList = $('<ol/>', {
       'class': 'tag-filter-list'
@@ -313,7 +341,7 @@ $(document).ready(function() {
     let tagListPane = $('<div/>', {
       'class': 'tag-list-pane'
     }).appendTo(listTagsPane);
-
+    $('#documentsMain').children().empty();
     filterList.append(generateTagFilterItem(tagListPane, filterList));
     refreshTagList(tagListPane, filterList);
   });

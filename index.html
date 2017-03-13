@@ -10,6 +10,7 @@
   <script src='js/bindings.js'></script>
   <script src='js/config.js'></script>
   <script src='js/bootstrap.js'></script>
+  <script type="text/javascript" src="js/bootstrap-filestyle.min.js"> </script>
   <link rel='stylesheet' href='css/bootstrap.min.css'>
   <link rel='stylesheet' href='css/style.css' />
 </head>
@@ -38,7 +39,7 @@
 
         <!-- Log in button and forgot pass/sign up links -->
         <button class="btn btn-login" type="button" id="logInButton">Log in</button>
-        <a href='#' class='logInLinks' style='float:left'>Forgot password?</a>
+        <a href='#' id='forgotpassword' class='logInLinks' style='float:left'>Forgot password?</a>
         <a href='#' id='signUpLink' class='logInLinks' style='float:right'>Sign up</a>
 
       </div>
@@ -50,7 +51,7 @@
 
         <!-- Title and quit button -->
         <div class='logInTitle'>
-          <p class='text-muted pull-left'>Register</p>
+          <p class='text-muted pull-left'>CREATE AN ACCOUNT</p>
           <button type="button" id='quitRegister' class="close pull-right" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
         </div>
@@ -59,7 +60,7 @@
 
         <!-- Fields for registering -->
         <div class='form-group has-feedback has-feedback-left'>
-          <input type='text' class='form-control field-login' placeholder='Username' id='userNameRegister' data-toggle='popover' data-trigger='focus' data-placement='right' data-content='Only letters and numbers allowed. 5-15 characters.'>
+          <input type='text' class='form-control field-login' placeholder='Username' id='userNameRegister' data-toggle='popover' data-trigger='focus' data-placement='right' data-content='Only letters and numbers allowed. &nbsp; 5-15 characters.'>
           <i class='form-control-feedback glyphicon glyphicon-user logInColour'></i>
         </div>
 
@@ -80,27 +81,60 @@
         </div>
 
         <!-- Button to complete registeration -->
-        <button class="btn register-buttons btn-blue" type="button" id="registerButton">Register</button>
+        <button class="btn register-buttons btn-blue" type="button" id="registerButton">Create</button>
 
       </div>
     </div>
-
 
     <!-- Registration complete pane -->
     <div id='registerDonePane' class='hidden img-rounded'>
       <div id='logInBox'>
         <span style='font-size:3.0em' class="glyphicon glyphicon-ok-circle doneRegisterIcon" aria-hidden="true"></span>
-        <h3>Register successful!</h3>
+        <h3>Registration successful!</h3>
 
         <hr />
         <a href='#' id='returnToLogInLink' class='logInLinks' style='text-align:center'>Return to login</a>
       </div>
     </div>
+    <!-- Pane for forgotten password -->
+    <div id='passwordPane' class='hidden img-rounded'>
+      <div id='logInBox'>
 
+        <!-- Title and quit button -->
+        <div class='logInTitle'>
+          <p class='text-muted pull-left'>Password Reset</p>
+          <button type="button" id='quitPassword' class="close pull-right" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
+        </div>
+        <br>
+        <hr />
+
+        <!-- Fields for email -->
+        <div class='form-group has-feedback has-feedback-left'>
+          <input type='text' class='form-control field-login' placeholder='Email' id='passwordEmail' data-toggle='popover' data-trigger='focus' data-placement='right' data-content='Only letters and numbers allowed. 5-15 characters.'>
+          <i class='form-control-feedback glyphicon glyphicon-user logInColour'></i>
+        </div>
+
+        <!-- Button to complete password -->
+        <button class="btn register-buttons btn-blue" type="button" id="sendButton">Send</button>
+
+      </div>
+    </div>
+    <!-- email sent pane -->
+    <div id='sentPane' class='hidden img-rounded'>
+      <div id='logInBox'>
+        <span style='font-size:3.0em' class="glyphicon glyphicon-ok-circle doneRegisterIcon" aria-hidden="true"></span>
+        <h3>Email Sent!</h3>
+
+        <hr />
+        <a href='#' id='returnToLogin' class='logInLinks' style='text-align:center'>Return to login</a>
+      </div>
+    </div>
   </div>
 
   <!-- If log in successful -->
+
+
 
 
   <div id='loggedIn'>
@@ -122,9 +156,9 @@
           <ul class='nav navbar-nav'>
             <li class='active activeNav'><a href='#' id='homeButton' class='nav-btn-style'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home<span class='sr-only'>(current)</span></a></li>
             <li class='dropdown'>
-              <a href='#' class='dropdown-toggle nav-btn-style' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Documents<span class='caret'></span></a>
+              <a href='#' class='dropdown-toggle nav-btn-style' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Documents<span class='caret'></span></a>
               <ul class='dropdown-menu'>
-                <li><a href="#" id='uploadDocumentButton'><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Upload document</a></li>
+                <li><a data-toggle='modal' href='#uploadModal'><span class='glyphicon glyphicon-plus'></span> Upload document</a></li>
                 <li><a href="#" id='listDocumentsButton'><span class="glyphicon glyphicon-file" aria-hidden="true"></span> View documents</a></li>
               </ul>
             </li>
@@ -132,7 +166,7 @@
             <li class='dropdown'>
               <a href='#' class='dropdown-toggle nav-btn-style' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>  Tags<span class='caret'></span></a>
               <ul class='dropdown-menu'>
-                <li><a href="#" id='createTagButton'><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create a tag</a></li>
+                <li><a href="#" id='newTagButton'><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create a tag</a></li>
                 <li><a href="#" id='listTagsButton'><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> View tags</a></li>
               </ul>
             </li>
@@ -146,7 +180,7 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownNav">
-            <li><span id='loggedInAs' class="text-align:center"></span></li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp; <span id='loggedInAs' class="text-align:center"></span></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Account</a></li>
             <li><a href="#" id="logOutButton">Logout</a></li>
@@ -167,25 +201,28 @@
       </div>
     </nav>
 
+    <!---
+    <div id='uploadTitle' class='hidden'>
+      <p class='pull-left'>Upload a file</p>
+      <button type="button" id='quitUpload' class="close pull-right white-button" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>--->
 
     <!-- currently not in use, dont delete
       <div id='userPane'></div><div id='adminPane'></div>-->
 
     <!-- empty panes might need to be left as they are cos i think some js methods use them to display stuff still -->
+
+
     <div id='documentsPane'>
 
       <div id='documentsMain'>
-        <div id='uploadDocumentPane'>
-          <div id='uploadTitle' class='hidden'>
-            <p class='pull-left'>Upload a file</p>
-            <button type="button" id='quitUpload' class="close pull-right white-button" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          </div>
-        </div>
+
         <div id='listDocumentsPane'>
 
         </div>
       </div>
     </div>
+
     <div id='tagsPane'>
       <div id='tagsMenu'>
       </div>
@@ -195,6 +232,26 @@
       </div>
     </div>
   </div>
+
+  <div id='uploadModal' class='modal fade' role='dialog'>
+    <div class='modal-dialog'>
+      <div class='modal-content'>
+        <div class='modal-header upload-header'>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <p>Upload file</p>
+        </div>
+        <div id='uploadDocumentButton'>
+          <div class='modal-body' id='uploadDocumentPane'>
+
+          </div>
+        </div>
+        <div class='modal-footer upload-header'>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>
