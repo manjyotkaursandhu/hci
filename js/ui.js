@@ -119,10 +119,10 @@ function generateDocumentFilterItem (pane, filterList) {
       refreshDocumentList(pane, filterList);
     }
   }); 
-  filterItem.append(criterion).append(pattern).append(addFilterButton);
+  /*filterItem.append(criterion).append(pattern).append(addFilterButton);
   criterion.before('Filter results by ');
   criterion.after(': ');
-  return filterItem;
+  return filterItem;*/
 }
 
 function refreshDocumentList (targetPane, filterList) {
@@ -411,6 +411,7 @@ let generateTagFilterItem = function (pane, filterList) {
       refreshTagList(pane, filterList);
     }
   });
+
   let updateFilterButton = $('<button/>', {
     type: 'button',
     text: 'Update filter',
@@ -419,10 +420,10 @@ let generateTagFilterItem = function (pane, filterList) {
       refreshTagList(pane, filterList);
     }
   }); 
-  filterItem.append(criterion).append(pattern).append(addFilterButton);
-  criterion.before('Filter results by ');
-  criterion.after(': ');
-  return filterItem;
+  //filterItem.append(criterion).append(pattern).append(addFilterButton);
+  //criterion.before('Filter results by ');
+  //criterion.after(': ');
+  //return filterItem;
 }
 
 function refreshTagList (targetPane, filterList) {
