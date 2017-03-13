@@ -232,8 +232,7 @@ hr {
 
 .document-name {
     padding: 5px 10px;
-    color: white;
-    background-color: black;
+    color: #696969;
     text-align: center;
     font:2.4em DejaVu Sans, sans-serif;
     font-size: 14px;
@@ -296,3 +295,5 @@ hr {
 .event-date {}
 
 .event-description {}
+
+#
