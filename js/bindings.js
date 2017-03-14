@@ -258,8 +258,6 @@ $(document).ready(function() {
           tagList,
           isprivate.is(':checked'), {
             oncomplete: function() {
-              uploadDocumentPane.hide();
-              $('#listDocumentsButton').click();
             }
           });
       }
@@ -345,7 +343,6 @@ $(document).ready(function() {
   $('#listTagsButton').click(function() {
     let listTagsPane = $('#listTagsPane');
     listTagsPane.empty().show().siblings().hide();
-    $('#uploadDocumentPane').hide();
 
     let filterList = $('<ol/>', {
       'class': 'tag-filter-list'
