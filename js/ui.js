@@ -93,7 +93,7 @@ function addDocumentFilterAsData (option, value, element) {
 }
 
 function generateDocumentFilterItem (pane, filterList) {
-  let filterItem = $('<ul/>');
+  let filterItem = $('<li/>');
   let criterion = $('<select/>')
       .append($('<option/>').text('name'))
       .append($('<option/>').text('owner'))
@@ -394,7 +394,7 @@ function addTagFilterAsData (option, value, element) {
 }
 
 let generateTagFilterItem = function (pane, filterList) {
-  let filterItem = $('<ul/>');
+  let filterItem = $('<li/>');
   let criterion = $('<select/>')
       .append($('<option/>').text('name'))
       .append($('<option/>').text('owner'))
