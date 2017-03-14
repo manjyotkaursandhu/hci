@@ -270,12 +270,14 @@ $(document).ready(function() {
   });
 
   $('#listDocumentsButton').click(function() {
+    
     let listDocumentsPane = $('#listDocumentsPane');
     listDocumentsPane.empty().show().siblings().hide();
 
     let filterList = $('<ol/>', {
       'class': 'document-filter-list'
     }).appendTo(listDocumentsPane);
+
     let documentListPane = $('<div/>', {
       'class': 'document-list-pane'
     }).appendTo(listDocumentsPane);
@@ -285,24 +287,49 @@ $(document).ready(function() {
     $('#tagsMain').children().empty();
   });
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
   // Search management **********************************************
-  $('#searchBtn').click(function() {
+  $('#searchButton').click(function() {
     
     let listDocumentsPane = $('#listDocumentsPane');
-    listDocumentsPane.empty().show().sibilings().hide();
-    //var searchQuery = 
-    let filterList = $('<ol>', {
+    listDocumentsPane.empty().show().siblings().hide();
+
+    let filterList = $('<ol/>', {
       'class': 'document-filter-list'
     }).appendTo(listDocumentsPane);
-    
-    let documentListPane = $('<div/', {
+
+    let documentListPane = $('<div/>', {
       'class': 'document-list-pane'
     }).appendTo(listDocumentsPane);
+
+    filterList.append(generateDocumentFilterItem(documentListPane, filterList));
+    refreshDocumentList(documentListPane, filterList);
+    $('#tagsMain').children().empty();
+  });
+
+/*
+  $('#searchButton').click(function() {
+
+    let listTagsPane = $('#listTagsPane');
+    listTagsPane.empty().show().siblings().hide();
+
+    let filterList = $('<ol/>', {
+      'class': 'tag-filter-list'
+    }).appendTo(listTagsPane);
+
+    let tagListPane = $('<div/>', {
+      'class': 'tag-list-pane'
+    }).appendTo(listTagsPane);
+
+    $('#documentsMain').children().empty();
+    filterList.append(generateTagFilterItem(tagListPane, filterList));
+    refreshTagList(tagListPane, filterList);
+  });
+*/
   
-    filterList.append(generateDoucmentFilterItem(documentListPane, filterList));
-      
-    });
-  
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
   // Tag management ************************************************************
 
   $('#newTagButton').show(function() {
