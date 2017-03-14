@@ -268,6 +268,9 @@ hr {
 
 .document-filter-list {
 /*background: #cce5ff;*/
+    position: absolute;
+    right: 1px;
+    top: 55px;
 }
 
 .document-list-pane {
