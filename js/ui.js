@@ -102,7 +102,7 @@ function generateDocumentFilterItem (pane, filterList) {
   let pattern = $('<input/>', { type: 'text' });
   let addFilterButton = $('<button/>', {
     type: 'button',
-    text: 'Add filter',
+    text: 'Add',
     click: function () {
       addDocumentFilterAsData(criterion.val(), pattern.val(), filterItem);
       addFilterButton.detach();
@@ -113,16 +113,16 @@ function generateDocumentFilterItem (pane, filterList) {
   });
   let updateFilterButton = $('<button/>', {
     type: 'button',
-    text: 'Update filter',
+    text: 'Update',
     click: function () {
       addDocumentFilterAsData(criterion.val(), pattern.val(), filterItem);
       refreshDocumentList(pane, filterList);
     }
   }); 
-  /*filterItem.append(criterion).append(pattern).append(addFilterButton);
-  criterion.before('Filter results by ');
-  criterion.after(': ');
-  return filterItem;*/
+  filterItem.append(criterion).append(pattern).append(addFilterButton);
+  criterion.before('');
+  criterion.after('');
+  return filterItem;
 }
 
 function refreshDocumentList (targetPane, filterList) {
@@ -402,7 +402,8 @@ let generateTagFilterItem = function (pane, filterList) {
   let pattern = $('<input/>', { type: 'text' });
   let addFilterButton = $('<button/>', {
     type: 'button',
-    text: 'Add filter',
+    text: 'Add',
+    
     click: function () {
       addTagFilterAsData(criterion.val(), pattern.val(), filterItem);
       addFilterButton.detach();
@@ -420,10 +421,10 @@ let generateTagFilterItem = function (pane, filterList) {
       refreshTagList(pane, filterList);
     }
   }); 
-  //filterItem.append(criterion).append(pattern).append(addFilterButton);
-  //criterion.before('Filter results by ');
-  //criterion.after(': ');
-  //return filterItem;
+  filterItem.append(criterion).append(pattern).append(addFilterButton);
+  criterion.before('Filter results by ');
+  criterion.after(': ');
+  return filterItem;
 }
 
 function refreshTagList (targetPane, filterList) {
