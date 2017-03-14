@@ -153,14 +153,18 @@
           </button>
         </div>
 
+<!-- SEARCH -->
+
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
             <input text="text" id='searchQuery' class="form-control" placeholder="Search" size="60">
           </div>
-          <button type="submit" id='searchBtn' class="btn btn-default" aria-label="Submit">
+          <button type="submit" id='searchButton' class="btn btn-default" aria-label="Submit">
           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
           </button>
         </form>
+
+<!-- LOGOUT -->
 
         <div class="dropdown navbar-right">
           <button class="btn btn-link navbar-btn dropdown-toggle nav-btn-style" type="button" id="dropdownNav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-label="Settings">
@@ -177,6 +181,8 @@
           </ul>
         </div>
 
+<!-- DOCUMENTS -->
+
         <div class='collapse navbar-collapse navbar-right' id='navbar-collapse'>
           <ul class='nav navbar-nav'>
             <li class='active activeNav'><a href='#' id='homeButton' class='nav-btn-style'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home<span class='sr-only'>(current)</span></a></li>
@@ -187,6 +193,8 @@
                 <li><a href="#" id='listDocumentsButton'><span class="glyphicon glyphicon-file" aria-hidden="true"></span> View documents</a></li>
               </ul>
             </li>
+
+<!-- TAGS -->
 
             <li class='dropdown'>
               <a href='#' class='dropdown-toggle nav-btn-style' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>  Tags<span class='caret'></span></a>
@@ -241,7 +249,7 @@
       <div class='modal-content'>
         <div class='modal-header upload-header'>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <p>Upload file</p>
+          <p style="font-size:30px">Upload file</p>
         </div>
         <div id='uploadDocumentButton'>
           <div class='modal-body' id='uploadDocumentPane'>
@@ -255,13 +263,13 @@
     </div>
   </div>
 
-  <!--- Creating tag popup --->
+  <!--- Creating tag popup -->
   <div id='createTagModal' class='modal fade' role='dialog'>
     <div class='modal-dialog'>
       <div class='modal-content'>
         <div class='modal-header upload-header'>
           <button type='button' class='close' data-dismiss='modal'>&times;</button>
-          <p>Create tag</p>
+          <p style="font-size:30px">Create tag</p>
         </div>
         <div id='newTagButton'>
           <div class='modal-body' id='createTagPane'>
