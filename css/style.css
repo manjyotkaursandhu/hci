@@ -269,7 +269,7 @@ hr {
 .document-filter-list {
 /*background: #cce5ff;*/
     position: absolute;
-    right: 1px;
+    right: 6px;
     top: 55px;
 }
 
@@ -331,7 +331,7 @@ hr {
 
 .tag-filter-list {
     position: absolute;
-    right: 1px;
+    right: 6px;
     top: 55px;
 }
 
