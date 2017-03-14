@@ -183,6 +183,7 @@ $(document).ready(function() {
   $('#uploadDocumentButton').show(function() {
     let uploadDocumentPane = $('#uploadDocumentPane');
     uploadDocumentPane.empty().show().siblings().hide();
+    $('#tagsMain').children().empty();
     
     let uploadContents = $('<div>', {
       id: 'uploadContents',

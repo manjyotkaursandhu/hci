@@ -1,19 +1,25 @@
+html {
+  height: 100%;
+}
+
 body {
     width: 100%;
-    margin: auto;
+    min-height: 100%;
     background-color: #70db70;
+
 }
 
 .overlay {
     background: #4d4d4d;
-    display: none; 
-    position: absolute; 
+    display: none;
+    position: absolute;
     top: 0;
-    right: 0;            
+    right: 0;
     bottom: 0;
     left: 0;
     opacity: 0.5;
     width: 100%;
+
 }
 
 #userPane {
@@ -21,23 +27,42 @@ body {
     float: left;
 }
 
+
 #adminPane {
     width: 49%;
     float: right;
 }
 
+#loggedIn{
+}
 #documentsPane {
+    background: transparent;
+    width: 100%;
+    height: 100%;#
+
+
+}
+#listDocumentsPane{
+    background: transparent;
+    height: 100%;
     width: 100%;
 }
+#documentsMain{
+    background: transparent;
+    width: 100%;
+    height: 100%;
+}
+
 
 #uploadDocumentPane {
     width: 100%;
 }
 
-
 #tagsPane {
-    width: 49%;
+    width: 100%;
+    height: 100%;
     float: left;
+
 }
 
 #logInPane {
@@ -231,32 +256,58 @@ hr {
 
 /* Document management */
 
-.document-filter-list {}
+.document-filter-list {
+/*background: #cce5ff;*/
+    position: absolute;
+    right: 6px;
+    top: 55px;
+    list-style: none;
+}
 
-.document-list-pane {}
+.document-list-pane {
+    margin-top: -80px;
+    background: transparent;
+    width: 25%;
+    height: 125vw;
+    border-right: 2px solid #d3d3d3;
+
+}
 
 .document-list-pane li {
-    padding-top: 20pt;
     list-style-type: none;
+    padding-top: 50pt;
+
+
 }
 
 .document-name {
-    padding: 5px 10px;
-    color: white;
-    background-color: black;
-    text-align: center;
+    width: 15%;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 20px 30px;
+    color: black;
+    text-align: center+;
     font:2.4em DejaVu Sans, sans-serif;
     font-size: 14px;
     cursor:pointer;
+    position: absolute;
+
 }
 
 .document-name:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     background-color: #aaaaaa;
 }
 
-.document-information-pane {}
+.document-information-pane {
+    margin-left: 125%;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    width: 250px;
+}
 
-.document-details-pane {}
+.document-details-pane {
+
+}
 
 .document-details {
     width: 100%;
@@ -270,13 +321,44 @@ hr {
 
 /* Tag management */
 
-.tag-filter-list {}
+.tag-filter-list {
+    position: absolute;
+    right: 6px;
+    top: 55px;
+    list-style: none;
+}
 
-.tag-list-pane {}
+.tag-list-pane {
+    margin-top: -133px;
+    background: transparent;
+    width: 25%;
+    height: 125vw;
+    border-right: 2px solid #d3d3d3;
+    }
+.tag-list-pane li {
+    list-style-type: none;
+    padding-top: 45pt;
+}
+.tag-name {
+    width: 15%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 20px 30px;
+    color: black;
+    text-align: center+;
+    font:2.4em DejaVu Sans, sans-serif;
+    font-size: 14px;
+    cursor:pointer;
+    position: absolute;}
 
-.tag-name {}
-
-.tag-information-pane {}
+.tag-name:hover {
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.2);
+    background-color: #aaaaaa;
+}
+.tag-information-pane {
+    margin-left: 125%;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    width: 250px; }
 
 .tag-details-pane {}
 
