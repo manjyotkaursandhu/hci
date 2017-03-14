@@ -93,7 +93,7 @@ function addDocumentFilterAsData (option, value, element) {
 }
 
 function generateDocumentFilterItem (pane, filterList) {
-  let filterItem = $('<li/>');
+  let filterItem = $('<ul/>');
   let criterion = $('<select/>')
       .append($('<option/>').text('name'))
       .append($('<option/>').text('owner'))
@@ -118,7 +118,7 @@ function generateDocumentFilterItem (pane, filterList) {
       addDocumentFilterAsData(criterion.val(), pattern.val(), filterItem);
       refreshDocumentList(pane, filterList);
     }
-  }); 
+  });
   filterItem.append(criterion).append(pattern).append(addFilterButton);
   criterion.before('');
   criterion.after('');
@@ -144,7 +144,7 @@ function documentInformationPane (doc) {
       .append(controlPane);
 
   // The details pane **********************************************************
-  
+
   let details = $('<table/>', { 'class': 'document-details' });
   addProperty(details, 'File', doc.getFile());
 
@@ -153,7 +153,7 @@ function documentInformationPane (doc) {
     readonly: true
   }).val(doc.ownersToString());
   addProperty(details, 'Owners', owners);
-  
+
   let description = $('<textarea/>', {
     readonly: true
   }).val(doc.getDescription());
@@ -175,14 +175,14 @@ function documentInformationPane (doc) {
     });
     addProperty(details, 'Is private', isprivate);
   }
-  
+
   detailsPane.append(details);
 
   // The control pane **********************************************************
 
   if (DMS.canEdit(doc)) {
     let editPane = $('<span/>').appendTo(controlPane);
-    
+
     let updateButton = $('<button/>', {
       type: 'button',
       text: 'Update file',
@@ -203,7 +203,7 @@ function documentInformationPane (doc) {
       }
     });
     editPane.append(updateButton);
-    
+
     let editButton = $('<button/>', {
       type: 'button',
       text: 'Edit details',
@@ -212,14 +212,14 @@ function documentInformationPane (doc) {
         description.prop('readonly', false);
         tags.prop('readonly', false);
         isprivate.prop('disabled', false);
-        
+
         updateButton.prop('disabled', true);
         editButton.detach();
         editPane.append(cancelButton).append(saveButton);
       }
     });
     editPane.append(editButton);
-    
+
     let cancelButton = $('<button/>', {
       type: 'button',
       text: 'Cancel',
@@ -228,7 +228,7 @@ function documentInformationPane (doc) {
         description.val(doc.getDescription()).prop('readonly', true);
         tags.val(doc.tagsToString()).prop('readonly', true);
         isprivate.prop('checked', doc.isPrivate()).prop('disabled', true);
-        
+
         updateButton.prop('disabled', false);
         cancelButton.detach();
         saveButton.detach();
@@ -251,13 +251,13 @@ function documentInformationPane (doc) {
           alert('You have to specify at least one tag.');
           return;
         }
-        
+
         doc.updateOwnersFromList(ownerList)
           .updateDescription(description.val())
           .updateTagsFromList(tagList)
           .makePrivate(isprivate.is(':checked'));
         DMS.updateDocument(doc);
-        
+
         owners.prop('readonly', true);
         description.prop('readonly', true);
         tags.prop('readonly', true);
@@ -278,7 +278,7 @@ function documentInformationPane (doc) {
 
   let refreshCommentsPane = function () {
     commentsPane.empty();
-    
+
     let commentList = $('<ol/>', {
       'class': 'comment-list'
     });
@@ -295,7 +295,7 @@ function documentInformationPane (doc) {
       );
     }
     commentsPane.append(commentList);
-    
+
     let newComment = $('<textarea/>');
     let addComment = $('<button/>', {
       type: 'button',
@@ -310,7 +310,7 @@ function documentInformationPane (doc) {
     });
     commentsPane.append(newComment).append(addComment);
   };
-  
+
   let showCommentsButton = $('<button/>', {
     type: 'button',
     text: 'Show comments',
@@ -323,10 +323,10 @@ function documentInformationPane (doc) {
         commentsPane.appendTo(mainPane);
         refreshCommentsPane();
       }
-    }  
+    }
   });
   controlPane.append(showCommentsButton);
-  
+
   // The history pane **********************************************************
 
   let refreshHistoryPane = function () {
@@ -347,7 +347,7 @@ function documentInformationPane (doc) {
     }
     historyPane.append(eventList);
   };
-  
+
   let showHistoryButton = $('<button/>', {
     type: 'button',
     text: 'Show history',
@@ -363,7 +363,7 @@ function documentInformationPane (doc) {
     }
   });
   controlPane.append(showHistoryButton);
-  
+
   return mainPane;
 };
 
@@ -394,7 +394,7 @@ function addTagFilterAsData (option, value, element) {
 }
 
 let generateTagFilterItem = function (pane, filterList) {
-  let filterItem = $('<li/>');
+  let filterItem = $('<ul/>');
   let criterion = $('<select/>')
       .append($('<option/>').text('name'))
       .append($('<option/>').text('owner'))
@@ -403,7 +403,7 @@ let generateTagFilterItem = function (pane, filterList) {
   let addFilterButton = $('<button/>', {
     type: 'button',
     text: 'Add',
-    
+
     click: function () {
       addTagFilterAsData(criterion.val(), pattern.val(), filterItem);
       addFilterButton.detach();
@@ -420,7 +420,7 @@ let generateTagFilterItem = function (pane, filterList) {
       addTagFilterAsData(criterion.val(), pattern.val(), filterItem);
       refreshTagList(pane, filterList);
     }
-  }); 
+  });
   filterItem.append(criterion).append(pattern).append(addFilterButton);
   criterion.before('');
   criterion.after('');
@@ -439,11 +439,11 @@ function tagInformationPane (tag) {
   let detailsPane = $('<div/>', { 'class': 'tag-details-pane' });
   let controlPane = $('<div/>', { 'class': 'tag-control-pane' });
   let historyPane = $('<div/>', { 'class': 'tag-history-pane' });
-  
+
   let mainPane = $('<div/>', { 'class': 'tag-information-pane' })
       .append(detailsPane)
       .append(controlPane);
-  
+
   // The details pane **********************************************************
 
   let details = $('<table/>', { 'class': 'tag-details' });
@@ -454,7 +454,7 @@ function tagInformationPane (tag) {
     readonly: true
   }).val(tag.ownersToString());
   addProperty(details, 'Owners', owners);
-  
+
   let description = $('<textarea/>', {
     readonly: true
   }).val(tag.getDescription());
@@ -475,20 +475,20 @@ function tagInformationPane (tag) {
       click: function () {
                           owners.prop('readonly', false);
                           description.prop('readonly', false);
-                          
+
                           editButton.detach();
                           editPane.append(cancelButton).append(saveButton);
                          }
     });
     editPane.append(editButton);
-    
+
     let cancelButton = $('<button/>', {
       type: 'button',
       text: 'Cancel',
       click: function () {
         owners.val(tag.ownersToString()).prop('readonly', true);
         description.val(tag.getDescription()).prop('readonly', true);
-        
+
         cancelButton.detach();
         saveButton.detach();
         editPane.append(editButton);
@@ -550,7 +550,7 @@ function tagInformationPane (tag) {
     });
     controlPane.append(mapButton);
   } // DMS.canEdit(tag)
-  
+
   // The history pane **********************************************************
 
   let showHistoryButton = $('<button/>', {
