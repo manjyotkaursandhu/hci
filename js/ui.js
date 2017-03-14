@@ -107,21 +107,24 @@ function generateDocumentFilterItem (pane, filterList) {
     }
   });
   
-  addFilterButton.append('<span class="glyphicon glyphicon-tag" aria-hidden="true"></span>');
-  
+  addFilterButton.append('<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>');
+
   let updateFilterButton = $('<button/>', {
     type: 'button',
-    text: 'Update',
     click: function () {
       addDocumentFilterAsData(criterion.val(), pattern.val(), filterItem);
       refreshDocumentList(pane, filterList);
     }
   });
+  updateFilterButton.append('<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>');
+
   filterItem.append(criterion).append(pattern).append(addFilterButton);
   criterion.before('');
   criterion.after('');
   return filterItem;
 }
+
+
 
 function refreshDocumentList (targetPane, filterList) {
   targetPane.empty()
@@ -400,8 +403,6 @@ let generateTagFilterItem = function (pane, filterList) {
   let pattern = $('<input/>', { type: 'text' });
   let addFilterButton = $('<button/>', {
     type: 'button',
-    text: 'Add',
-
     click: function () {
       addTagFilterAsData(criterion.val(), pattern.val(), filterItem);
       addFilterButton.detach();
@@ -411,14 +412,17 @@ let generateTagFilterItem = function (pane, filterList) {
     }
   });
 
+  addFilterButton.append('<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>');
+
   let updateFilterButton = $('<button/>', {
     type: 'button',
-    text: 'Update',
     click: function () {
       addTagFilterAsData(criterion.val(), pattern.val(), filterItem);
       refreshTagList(pane, filterList);
     }
   });
+  updateFilterButton.append('<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>');
+
   filterItem.append(criterion).append(pattern).append(addFilterButton);
   criterion.before('');
   criterion.after('');
