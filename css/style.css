@@ -35,13 +35,13 @@ body {
 
 #loggedIn{
 }
+
 #documentsPane {
     background: transparent;
     width: 100%;
-    height: 100%;#
-
-
+    height: 100%;
 }
+
 #listDocumentsPane{
     background: transparent;
     height: 100%;
@@ -55,6 +55,10 @@ body {
 
 
 #uploadDocumentPane {
+    width: 100%;
+}
+
+#createTagPane {
     width: 100%;
 }
 
@@ -250,6 +254,7 @@ hr {
     border: 0px;
 }
 
+
 /* User management */
 
 .user-name {}
@@ -377,7 +382,7 @@ hr {
 }
 
 .property-value {
-
+    width: 100%;
 }
 
 /* Comments */

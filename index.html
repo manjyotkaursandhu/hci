@@ -10,7 +10,8 @@
   <script src='js/bindings.js'></script>
   <script src='js/config.js'></script>
   <script src='js/bootstrap.js'></script>
-  <script type="text/javascript" src="js/bootstrap-filestyle.min.js"> </script>
+  <script type="text/javascript" src="js/bootstrap-filestyle.min.js">
+  </script>
   <link rel='stylesheet' href='css/bootstrap.min.css'>
   <link rel='stylesheet' href='css/style.css' />
 </head>
@@ -39,7 +40,7 @@
 
         <!-- Log in button and forgot pass/sign up links -->
         <button class="btn btn-login" type="button" id="logInButton">Log in</button>
-        <a href='#' id= 'forgotpassword' class='logInLinks' style='float:left'>Forgot password?</a>
+        <a href='#' id='forgotpassword' class='logInLinks' style='float:left'>Forgot password?</a>
         <a href='#' id='signUpLink' class='logInLinks' style='float:right'>Sign up</a>
 
       </div>
@@ -96,7 +97,7 @@
         <a href='#' id='returnToLogInLink' class='logInLinks' style='text-align:center'>Return to login</a>
       </div>
     </div>
-  <!-- Pane for forgotten password -->
+    <!-- Pane for forgotten password -->
     <div id='passwordPane' class='hidden img-rounded'>
       <div id='logInBox'>
 
@@ -190,7 +191,7 @@
             <li class='dropdown'>
               <a href='#' class='dropdown-toggle nav-btn-style' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>  Tags<span class='caret'></span></a>
               <ul class='dropdown-menu'>
-                <li><a href="#" id='newTagButton'><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create a tag</a></li>
+                <li><a data-toggle='modal' href="#createTagModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create a tag</a></li>
                 <li><a href="#" id='listTagsButton'><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> View tags</a></li>
               </ul>
             </li>
@@ -229,7 +230,6 @@
       <div id='tagsMenu'>
       </div>
       <div id='tagsMain'>
-        <div id='createTagPane'></div>
         <div id='listTagsPane'></div>
       </div>
     </div>
@@ -248,7 +248,27 @@
           </div>
         </div>
         <div class='modal-footer upload-header'>
-          
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id='createTagModal' class='modal fade' role='dialog'>
+    <div class='modal-dialog'>
+      <div class='modal-content'>
+        <div class='modal-header upload-header'>
+          <button type='button' class='close' data-dismiss='modal'>&times;</button>
+          <p>Create tag</p>
+        </div>
+        <div id='newTagButton'>
+          <div class='modal-body' id='createTagPane'>
+
+
+          </div>
+        </div>
+        <div class='modal-footer upload-header'>
+
         </div>
       </div>
     </div>

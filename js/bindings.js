@@ -100,7 +100,6 @@ $(document).ready(function() {
     $('#homeButton').click(function(){
         $('#documentsMain').children().empty();
         $('#tagsMain').children().empty();
-        $('#uploadDocumentPane').hide();
   
     });  
   $('#resetButton').click(function () {
@@ -183,7 +182,6 @@ $(document).ready(function() {
   $('#uploadDocumentButton').show(function() {
     let uploadDocumentPane = $('#uploadDocumentPane');
     uploadDocumentPane.empty().show().siblings().hide();
-    $('#tagsMain').children().empty();
     
     let uploadContents = $('<div>', {
       id: 'uploadContents',
@@ -291,30 +289,42 @@ $(document).ready(function() {
 
   // Tag management ************************************************************
 
-  $('#newTagButton').click(function() {
+  $('#newTagButton').show(function() {
     let createTagPane = $('#createTagPane');
     createTagPane.empty().show().siblings().hide();
-    $('#uploadDocumentPane').hide();
 
+    let createTagContents = $('<div>', {
+      id: 'createTagContents',
+      class: 'upload-container'
+    });
+    
     let details = $('<table/>', {
       'class': 'tag-details'
     });
 
     let name = $('<input/>', {
-      type: 'text'
+      type: 'text',
+      class: 'input-group form-control uploadDocFields'
     });
+    
     addProperty(details, 'Name', name);
 
     let additionalOwners = $('<input/>', {
-      type: 'text'
+      type: 'text',
+      class: 'input-group form-control uploadDocFields'
     });
     addProperty(details, 'Additional owners', additionalOwners);
 
-    let description = $('<textarea/>');
+    let description = $('<textarea/>', {
+      class: 'input-group form-control uploadDocFields'
+    });
+    
     addProperty(details, 'Description', description);
     $('#documentsMain').children().empty();
+    
     let createTagButton = $('<button/>', {
       type: 'button',
+      class: 'btn btn-default upload-buttons',
       text: 'Create tag',
       click: function() {
         let ownerList = parseCSV(additionalOwners.val());
@@ -328,7 +338,8 @@ $(document).ready(function() {
         
     });
 
-    createTagPane.append(details).append(createTagButton);
+    createTagContents.append(details);
+    createTagPane.append(createTagContents).append(createTagButton);
   });
 
   $('#listTagsButton').click(function() {
