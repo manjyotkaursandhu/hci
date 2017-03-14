@@ -415,15 +415,15 @@ let generateTagFilterItem = function (pane, filterList) {
 
   let updateFilterButton = $('<button/>', {
     type: 'button',
-    text: 'Update filter',
+    text: 'Update',
     click: function () {
       addTagFilterAsData(criterion.val(), pattern.val(), filterItem);
       refreshTagList(pane, filterList);
     }
   }); 
   filterItem.append(criterion).append(pattern).append(addFilterButton);
-  criterion.before('Filter results by ');
-  criterion.after(': ');
+  criterion.before('');
+  criterion.after('');
   return filterItem;
 }
 
