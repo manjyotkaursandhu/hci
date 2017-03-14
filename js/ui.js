@@ -98,7 +98,6 @@ function generateDocumentFilterItem (pane, filterList) {
   let pattern = $('<input/>', { type: 'text' });
   let addFilterButton = $('<button/>', {
     type: 'button',
-    text: 'Add',
     click: function () {
       addDocumentFilterAsData(criterion.val(), pattern.val(), filterItem);
       addFilterButton.detach();
@@ -107,6 +106,9 @@ function generateDocumentFilterItem (pane, filterList) {
       refreshDocumentList(pane, filterList);
     }
   });
+  
+  addFilterButton.append('<span class="glyphicon glyphicon-tag" aria-hidden="true"></span>');
+  
   let updateFilterButton = $('<button/>', {
     type: 'button',
     text: 'Update',
