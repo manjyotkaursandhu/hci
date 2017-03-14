@@ -330,7 +330,9 @@ hr {
 /* Tag management */
 
 .tag-filter-list {
-    
+    position: absolute;
+    right: 1px;
+    top: 55px;
 }
 
 .tag-list-pane {
