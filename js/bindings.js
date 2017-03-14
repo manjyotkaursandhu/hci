@@ -285,6 +285,24 @@ $(document).ready(function() {
     $('#tagsMain').children().empty();
   });
 
+  // Search management **********************************************
+  $('#searchBtn').click(function() {
+    
+    let listDocumentsPane = $('#listDocumentsPane');
+    listDocumentsPane.empty().show().sibilings().hide();
+    //var searchQuery = 
+    let filterList = $('<ol>', {
+      'class': 'document-filter-list'
+    }).appendTo(listDocumentsPane);
+    
+    let documentListPane = $('<div/', {
+      'class': 'document-list-pane'
+    }).appendTo(listDocumentsPane);
+  
+    filterList.append(generateDoucmentFilterItem(documentListPane, filterList));
+      
+    });
+  
   // Tag management ************************************************************
 
   $('#newTagButton').show(function() {

@@ -379,6 +379,7 @@ hr {
     font-weight: bold;
     text-align: right;
     padding: 20px;
+    width: 40%;
 }
 
 .property-value {

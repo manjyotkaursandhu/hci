@@ -88,6 +88,7 @@ function addDocumentFilterAsData (option, value, element) {
   }
 }
 
+//For filtering documents, on view documents page
 function generateDocumentFilterItem (pane, filterList) {
   let filterItem = $('<li/>');
   let criterion = $('<select/>')
@@ -96,6 +97,8 @@ function generateDocumentFilterItem (pane, filterList) {
       .append($('<option/>').text('tag'))
       .append($('<option/>').text('date'));
   let pattern = $('<input/>', { type: 'text' });
+  
+  //button to add a filter
   let addFilterButton = $('<button/>', {
     type: 'button',
     click: function () {
@@ -109,6 +112,7 @@ function generateDocumentFilterItem (pane, filterList) {
   
   addFilterButton.append('<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>');
 
+  //button to update an already added filter
   let updateFilterButton = $('<button/>', {
     type: 'button',
     click: function () {
@@ -116,6 +120,7 @@ function generateDocumentFilterItem (pane, filterList) {
       refreshDocumentList(pane, filterList);
     }
   });
+  
   updateFilterButton.append('<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>');
 
   filterItem.append(criterion).append(pattern).append(addFilterButton);
