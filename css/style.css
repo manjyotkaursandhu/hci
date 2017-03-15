@@ -304,7 +304,6 @@ hr {
     font-size: 14px;
     cursor:pointer;
     position: absolute;
-
 }
 
 .document-name:hover {
@@ -379,20 +378,22 @@ hr {
 }
 
 .tag-list-pane {
-    margin-top: -70px;
+    margin-top: -80px;
     background: transparent;
     width: 20%;
     height: 125vw;
+    min-width: 200px;
 }
     
 .tag-list-pane li {
     list-style-type: none;
-    padding-top: 45pt;
+    padding-top: 50pt;
 }
 
 .tag-name {
     width: 15%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    min-width: 150px;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     padding: 20px 30px;
     color: black;
@@ -400,7 +401,9 @@ hr {
     font:2.4em DejaVu Sans, sans-serif;
     font-size: 14px;
     cursor:pointer;
-    position: absolute;}
+    position: absolute;
+}
+
 
 .tag-name:hover {
     box-shadow: 0 3px 5px 0 rgba(0,0,0,0.2);
