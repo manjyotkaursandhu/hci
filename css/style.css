@@ -141,7 +141,7 @@ body {
 #tagsFilterPane {
     right: 2%;
     top: 12%;
-     width: 35%;
+     width: 50%;
      height: 40%;
      position: fixed;
     /*box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);*/
@@ -381,9 +381,8 @@ hr {
 .tag-list-pane {
     margin-top: -70px;
     background: transparent;
-    width: 25%;
+    width: 20%;
     height: 125vw;
-    border-right: 2px solid #d3d3d3;
 }
     
 .tag-list-pane li {
