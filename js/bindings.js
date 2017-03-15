@@ -363,7 +363,6 @@ $(document).ready(function() {
     });
     
     addProperty(details, 'Description', description);
-    $('#documentsMain').children().empty();
     
     let createTagButton = $('<button/>', {
       type: 'button',
@@ -392,11 +391,11 @@ $(document).ready(function() {
     let tagsFilterPane = $('#tagsFilterPane')
     tagsFilterPane.empty().show();
     
-    
+    /**
     let tagsFilterTitle = $('<div/>', {
       'class': 'tag-filter-title',
       'text': 'Filter'
-    }).appendTo(tagsFilterPane);
+    }).appendTo(tagsFilterPane);**/
     
     let filterList = $('<ol/>', {
       'class': 'tag-filter-list'
