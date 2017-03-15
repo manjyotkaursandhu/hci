@@ -423,7 +423,7 @@ let generateTagFilterItem = function (pane, filterList) {
     click: function () {
       addTagFilterAsData(criterion.val(), pattern.val(), filterItem);
       addFilterButton.detach();
-      filterItem.append(updateFilterButton);
+      formInline.append(updateFilterButton);
       filterItem.after(generateTagFilterItem(pane, filterList));
       refreshTagList(pane, filterList);
     }
@@ -433,7 +433,7 @@ let generateTagFilterItem = function (pane, filterList) {
 
   let updateFilterButton = $('<button/>', {
     type: 'button',
-    class: 'btn btn-inline btn-square',
+    class: 'btn btn-default',
     click: function () {
       addTagFilterAsData(criterion.val(), pattern.val(), filterItem);
       refreshTagList(pane, filterList);
