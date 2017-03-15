@@ -144,7 +144,7 @@ body {
      width: 27%;
      height: 40%;
      position: fixed;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 25px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
     
 }
 
@@ -384,11 +384,13 @@ hr {
     width: 25%;
     height: 125vw;
     border-right: 2px solid #d3d3d3;
-    }
+}
+    
 .tag-list-pane li {
     list-style-type: none;
     padding-top: 45pt;
 }
+
 .tag-name {
     width: 15%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -405,14 +407,17 @@ hr {
     box-shadow: 0 3px 5px 0 rgba(0,0,0,0.2);
     background-color: #aaaaaa;
 }
+
 .tag-information-pane {
-    margin-left: 125%;
+    margin-left: 110%;
+    top: 15%;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
-    width: 300%;
+    width: 180%;
 }
 
 .tag-details-pane {
-
+    width: 100%;
+    padding: 20px;
 }
 
 .tag-details {
@@ -422,7 +427,13 @@ hr {
 .tag-control-pane {
     position: relative;
     margin: auto;
-    left: 14%;
+    padding: 10px;
+    width: 100%;
+    background-color: #70db70;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
 }
 
 .tag-history-pane {}
@@ -432,8 +443,8 @@ hr {
 .property-name {
     font-weight: bold;
     text-align: right;
+    width: 30%;
     padding: 20px;
-    width: 40%;
 }
 
 .property-value {
