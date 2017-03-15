@@ -387,14 +387,24 @@ $(document).ready(function() {
 
   $('#listTagsButton').click(function() {
     let listTagsPane = $('#listTagsPane');
-    listTagsPane.empty().show().siblings().hide();
+    listTagsPane.empty().show();
 
+    let tagsFilterPane = $('#tagsFilterPane').appendTo(listTagsPane);
+    tagsFilterPane.show();
+    
+    let tagsFilterTitle = $('<div/>', {
+      'class': 'tag-filter-title',
+      'text': 'Filter'
+    }).appendTo(tagsFilterPane);
+    
     let filterList = $('<ol/>', {
       'class': 'tag-filter-list'
-    }).appendTo(listTagsPane);
+    }).appendTo(tagsFilterPane);
+    
     let tagListPane = $('<div/>', {
       'class': 'tag-list-pane'
     }).appendTo(listTagsPane);
+  
     $('#documentsMain').children().empty();
     filterList.append(generateTagFilterItem(tagListPane, filterList));
     refreshTagList(tagListPane, filterList);

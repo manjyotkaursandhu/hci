@@ -138,6 +138,16 @@ body {
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 25px 0 rgba(0, 0, 0, 0.19);
 }
 
+#tagsFilterPane {
+    right: 2%;
+    top: 12%;
+     width: 27%;
+     height: 40%;
+     position: fixed;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 25px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
 /* Log in */
 
 /* For log in button */
@@ -349,11 +359,23 @@ hr {
 
 /* Tag management */
 
+/* For tag filter side bar */
+.tag-filter-title {
+   font-weight:bold;
+   color: white;
+   text-align:left;
+   background-color:#70db70;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   padding: 5px;
+   padding-left: 10px;
+}
+
 .tag-filter-list {
     position: absolute;
-    right: 6px;
-    top: 55px;
+    padding: 10px;
     list-style: none;
+    width: 100%;
 }
 
 .tag-list-pane {

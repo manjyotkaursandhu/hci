@@ -90,6 +90,7 @@ function addDocumentFilterAsData (option, value, element) {
 
 //For filtering documents, on view documents page
 function generateDocumentFilterItem (pane, filterList) {
+
   let filterItem = $('<li/>');
   let criterion = $('<select/>')
       .append($('<option/>').text('name'))
@@ -400,14 +401,25 @@ function addTagFilterAsData (option, value, element) {
 }
 
 let generateTagFilterItem = function (pane, filterList) {
+
+  let formInline = $('<div/>', {
+    class: 'form-inline'
+  });
+  
   let filterItem = $('<li/>');
-  let criterion = $('<select/>')
-      .append($('<option/>').text('name'))
-      .append($('<option/>').text('owner'))
-      .append($('<option/>').text('date'));
-  let pattern = $('<input/>', { type: 'text' });
+  
+  let criterion = $('<select/>', {
+    class: 'form-control'
+  }).append($('<option/>').text('name')).append($('<option/>').text('owner')).append($('<option/>').text('date'));
+      
+  let pattern = $('<input/>', { 
+    type: 'text', 
+    placeholder: 'Filter for..',
+    class: 'form-control' });
+    
   let addFilterButton = $('<button/>', {
     type: 'button',
+    class: 'btn btn-default',
     click: function () {
       addTagFilterAsData(criterion.val(), pattern.val(), filterItem);
       addFilterButton.detach();
@@ -421,14 +433,17 @@ let generateTagFilterItem = function (pane, filterList) {
 
   let updateFilterButton = $('<button/>', {
     type: 'button',
+    class: 'btn btn-inline btn-square',
     click: function () {
       addTagFilterAsData(criterion.val(), pattern.val(), filterItem);
       refreshTagList(pane, filterList);
     }
   });
-  updateFilterButton.append('<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>');
 
-  filterItem.append(criterion).append(pattern).append(addFilterButton);
+  updateFilterButton.append('<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>');
+  
+  formInline.append(criterion).append(pattern).append(addFilterButton);
+  filterItem.append(formInline);
   criterion.before('');
   criterion.after('');
   return filterItem;
