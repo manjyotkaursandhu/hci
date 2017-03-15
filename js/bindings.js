@@ -388,9 +388,10 @@ $(document).ready(function() {
   $('#listTagsButton').click(function() {
     let listTagsPane = $('#listTagsPane');
     listTagsPane.empty().show();
-
-    let tagsFilterPane = $('#tagsFilterPane').appendTo(listTagsPane);
-    tagsFilterPane.show();
+    
+    let tagsFilterPane = $('#tagsFilterPane')
+    tagsFilterPane.empty().show();
+    
     
     let tagsFilterTitle = $('<div/>', {
       'class': 'tag-filter-title',
