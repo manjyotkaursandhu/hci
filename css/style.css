@@ -275,18 +275,17 @@ hr {
     width: 25%;
     height: 125vw;
     border-right: 2px solid #d3d3d3;
-
+    min-width: 200px;
 }
 
 .document-list-pane li {
     list-style-type: none;
     padding-top: 50pt;
-
-
 }
 
 .document-name {
     width: 15%;
+    min-width: 150px;
     box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     padding: 20px 30px;
@@ -307,11 +306,14 @@ hr {
 .document-information-pane {
     margin-left: 125%;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
-    width: 200%;
+    width: 300%;
+    min-width: 500px;
 }
 
 .document-details-pane {
-
+    position: relative;
+    display: inline-block;
+    
 }
 
 .document-details {
@@ -320,12 +322,30 @@ hr {
 
 .document-control-pane {
     position: relative;
-    left: 50px;
+    /*left: 50px;*/
+    float:left;
+    width: 25%;
+    min-width: 100px;
 }
 
-.document-comments-pane {}
+.document-control-pane button {
+    margin-top: 5px;
+    display: block;
+    width: 95%;
+    cursor:pointer;
+    background-color: #70db70;
+    color: #FFFFFF;
+    border: 0px;
+    float: right;
+    
+    
+}
+
+.document-comments-pane {
+}
 
 .document-history-pane {}
+
 
 /* Tag management */
 
@@ -366,7 +386,7 @@ hr {
 .tag-information-pane {
     margin-left: 125%;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
-    width: 200%;
+    width: 300%;
 }
 
 .tag-details-pane {
@@ -413,3 +433,4 @@ hr {
 .event-date {}
 
 .event-description {}
+

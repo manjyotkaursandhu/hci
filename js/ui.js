@@ -212,7 +212,7 @@ function documentInformationPane (doc) {
 
     let editButton = $('<button/>', {
       type: 'button',
-      text: 'Edit details',
+      text: 'Edit',
       click: function () {
         owners.prop('readonly', false);
         description.prop('readonly', false);
@@ -319,13 +319,13 @@ function documentInformationPane (doc) {
 
   let showCommentsButton = $('<button/>', {
     type: 'button',
-    text: 'Show comments',
+    text: 'Discussion Thread',
     click: function () {
       if (commentsPane.is(':visible')) {
-        showCommentsButton.text('Show comments');
+        showCommentsButton.text('Discussion Thread');
         commentsPane.detach();
       } else {
-        showCommentsButton.text('Hide comments');
+        showCommentsButton.text('Hide Thread');
         commentsPane.appendTo(mainPane);
         refreshCommentsPane();
       }
@@ -356,13 +356,13 @@ function documentInformationPane (doc) {
 
   let showHistoryButton = $('<button/>', {
     type: 'button',
-    text: 'Show history',
+    text: 'History',
     click: function () {
       if (historyPane.is(':visible')) {
-        showHistoryButton.text('Show history');
+        showHistoryButton.text('History');
         historyPane.detach();
       } else {
-        showHistoryButton.text('Hide history');
+        showHistoryButton.text('Hide History');
         historyPane.appendTo(mainPane);
         refreshHistoryPane();
       }
