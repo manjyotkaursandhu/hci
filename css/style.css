@@ -307,7 +307,7 @@ hr {
 .document-information-pane {
     margin-left: 125%;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
-    width: 250px;
+    width: 200%;
 }
 
 .document-details-pane {
@@ -318,7 +318,10 @@ hr {
     width: 100%;
 }
 
-.document-control-pane {}
+.document-control-pane {
+    position: relative;
+    left: 50px;
+}
 
 .document-comments-pane {}
 
@@ -363,13 +366,22 @@ hr {
 .tag-information-pane {
     margin-left: 125%;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
-    width: 250px; }
+    width: 200%;
+}
 
-.tag-details-pane {}
+.tag-details-pane {
 
-.tag-details {}
+}
 
-.tag-control-pane {}
+.tag-details {
+    width: 100%;
+}
+
+.tag-control-pane {
+    position: relative;
+    margin: auto;
+    left: 14%;
+}
 
 .tag-history-pane {}
 
