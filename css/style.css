@@ -393,7 +393,7 @@ hr {
     top: 6%;
      width: 30%;
      height: 40%;
-     position: fixed;
+     position: absolute;
      min-width: 300px;
     /*box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);*/
     
@@ -436,6 +436,7 @@ hr {
 
 .document-information-pane {
     margin-left: 110%;
+    top: 15%;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
     width: 300%;
     min-width: 700px;
