@@ -254,15 +254,17 @@ hr {
     border: 0px;
 }
 
+.dropdown-toggle.nav-btn-style:hover {
+    background-color: grey;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
 .dropdown-menu {
     min-width: 122px;
 }
-
-/*
-.dropdown-menu > li {
-    max-width: 122px;
-}
-/*
 
 /* User management */
 
