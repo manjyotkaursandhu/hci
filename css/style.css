@@ -1,12 +1,11 @@
 html {
-  height: 100%;
+    height: 100%;
 }
 
 body {
     width: 100%;
     min-height: 100%;
     background-color: #70db70;
-
 }
 
 .overlay {
@@ -19,7 +18,6 @@ body {
     left: 0;
     opacity: 0.5;
     width: 100%;
-
 }
 
 #userPane {
@@ -27,14 +25,12 @@ body {
     float: left;
 }
 
-
 #adminPane {
     width: 49%;
     float: right;
 }
 
-#loggedIn{
-}
+#loggedIn {}
 
 #documentsPane {
     background: transparent;
@@ -42,17 +38,17 @@ body {
     height: 100%;
 }
 
-#listDocumentsPane{
+#listDocumentsPane {
     background: transparent;
     height: 100%;
     width: 100%;
-}
-#documentsMain{
-    background: transparent;
-    width: 100%;
-    height: 100%;
 }
 
+#documentsMain {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+}
 
 #uploadDocumentPane {
     width: 100%;
@@ -66,14 +62,13 @@ body {
     width: 100%;
     height: 100%;
     float: left;
-
 }
 
 #logInPane {
     width: 350px;
     height: 32%;
     position: absolute;
-    top:0;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
@@ -90,7 +85,7 @@ body {
     width: 350px;
     height: 57%;
     position: absolute;
-    top:0;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
@@ -103,7 +98,7 @@ body {
     width: 350px;
     height: 35%;
     position: absolute;
-    top:0;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
@@ -116,7 +111,7 @@ body {
     width: 350px;
     height: 32%;
     position: absolute;
-    top:0;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
@@ -129,7 +124,7 @@ body {
     width: 350px;
     height: 32%;
     position: absolute;
-    top:0;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
@@ -138,12 +133,15 @@ body {
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 25px 0 rgba(0, 0, 0, 0.19);
 }
 
+
 /* Log in */
 
+
 /* For log in button */
+
 .btn-login {
     width: 100%;
-    cursor:pointer;
+    cursor: pointer;
     background-color: #70db70;
     color: #FFFFFF;
     border: 0px;
@@ -154,7 +152,9 @@ body {
     border: 0px;
 }
 
+
 /* Colour used for log in bg of log in box, icons, text in fields */
+
 .logInColour {
     color: #d6d6c2;
 }
@@ -162,7 +162,7 @@ body {
 .logInLinks {
     color: #999999;
     font-size: 11px;
-    text-align:center;
+    text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -175,14 +175,14 @@ body {
     cursor: pointer;
     border: 0px;
     color: white;
-    width:100%;
+    width: 100%;
 }
 
 hr {
-    border:none;
-    color:white;
-    height:1px;
-    background:#d6d6c2;
+    border: none;
+    color: white;
+    height: 1px;
+    background: #d6d6c2;
     background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#d6d6c2), to(#fff));
 }
 
@@ -201,29 +201,38 @@ hr {
     display: none;
 }
 
+
 /* For nav bar */
+
 .nav-btn-style {
-    text-transform:uppercase;
+    text-transform: uppercase;
     color: white !important;
     font-weight: bold;
-    letter-spacing:1px;
+    letter-spacing: 1px;
 }
 
 .navbar-default {
     background-color: #70db70;
     border: 0px;
 }
-.navbar-default .navbar-nav > li > a {
+
+.navbar-default .navbar-nav>li>a {
     color: #196619;
 }
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
     background-color: #70db70;
     color: #555555;
 }
 
+
 /* Uploading document */
 
+
 /* Contains all fields for an upload */
+
 .upload-container {
     width: 100%;
     padding: 20px;
@@ -231,22 +240,28 @@ hr {
     position: relative;
 }
 
+
 /* Formatting for the upload button */
+
 .upload-buttons {
     float: right;
     padding: 10px;
 }
 
+
 /* Formatting for the upload doc fields */
+
 .uploadDocFields {
     padding: 10px;
     margin-bottom: 15px;
     width: 100%;
 }
 
+
 /* Formatting applied to the header and footer of upload doc modal */
+
 .upload-header {
-    background-color:#70db70;
+    background-color: #70db70;
     color: white;
     text-transform: uppercase;
     font-weight: bold;
@@ -262,31 +277,38 @@ hr {
     min-width: 122px;
 }
 
+
 /* User management */
 
 .user-name {}
 
+
 /* Document management */
 
 .document-filter-title {
-    font-weight:bold;
+    font-weight: bold;
     color: white;
-    text-align:left;
-    background-color:#70db70;
+    text-align: left;
+    background-color: #70db70;
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 0px;
     padding-left: 0px;
 }
 
+
 /*************************************************/
+
 .document-filter-list {
     position: absolute;
     right: 6px;
     top: 55px;
     list-style: none;
 }
+
+
 /*************************************************/
+
 
 /*
 .document-filter-list {
@@ -319,20 +341,19 @@ hr {
     position: absolute;
     min-width: 300px;
     /*box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);*/
-    
 }
 
 .document-name {
     width: 15%;
     min-width: 150px;
-    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     padding: 20px 30px;
     color: black;
     text-align: center+;
-    font:2.4em DejaVu Sans, sans-serif;
+    font: 2.4em DejaVu Sans, sans-serif;
     font-size: 14px;
-    cursor:pointer;
+    cursor: pointer;
     position: absolute;
 }
 
@@ -344,17 +365,21 @@ hr {
     float: right;
 }
 
+
 /*************************************************/
+
 .document-name:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     background-color: #aaaaaa;
 }
+
+
 /*************************************************/
 
 .document-information-pane {
     margin-left: 110%;
     top: 15%;
-    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
     width: 300%;
     min-width: 500px;
 }
@@ -391,16 +416,18 @@ hr {
 
 /* Tag management */
 
+
 /* For tag filter side bar */
+
 .tag-filter-title {
-   font-weight:bold;
-   color: white;
-   text-align:left;
-   background-color:#70db70;
-   text-transform: uppercase;
-   letter-spacing: 1px;
-   padding: 0px;
-   padding-left: 0px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    background-color: #70db70;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0px;
+    padding-left: 0px;
 }
 
 .tag-filter-list {
@@ -418,7 +445,7 @@ hr {
     height: 125vw;
     min-width: 200px;
 }
-    
+
 .tag-list-pane li:not(.history-list) {
     list-style-type: none;
     padding-top: 50pt;
@@ -427,25 +454,24 @@ hr {
 #tagsFilterPane {
     right: 0px;
     top: 6%;
-     width: 30%;
-     height: 40%;
-     position: absolute;
-     min-width: 300px;
+    width: 30%;
+    height: 40%;
+    position: absolute;
+    min-width: 300px;
     /*box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);*/
-    
 }
 
 .tag-name {
     width: 15%;
     min-width: 150px;
-    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     padding: 20px 30px;
     color: black;
     text-align: center+;
-    font:2.4em DejaVu Sans, sans-serif;
+    font: 2.4em DejaVu Sans, sans-serif;
     font-size: 14px;
-    cursor:pointer;
+    cursor: pointer;
     position: absolute;
 }
 
@@ -458,14 +484,14 @@ hr {
 }
 
 .tag-name:hover {
-    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
     background-color: #aaaaaa;
 }
 
 .tag-information-pane {
     margin-left: 110%;
     top: 15%;
-    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
     width: 300%;
     min-width: 560px;
 }
@@ -497,6 +523,7 @@ hr {
 
 .tag-history-pane {}
 
+
 /* Names and values of document/tag properties */
 
 .property-name {
@@ -510,13 +537,43 @@ hr {
     width: 100%;
 }
 
+
 /* Comments */
 
 .comment-list {}
 
-.comment-text {}
+/*
+.comment-list li {
+    position: relative;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    color: #f5f5f5;
+    background-color: #333;
+}
 
-.comment-info {}
+
+.comment-text {
+      border-top-color: #337ab7;
+}
+
+
+.comment-info {
+    color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}*/
+
+.comment-text {
+    
+}
+
+.comment-info {
+    
+}
+
 
 /* Events */
 

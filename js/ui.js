@@ -320,15 +320,23 @@ function documentInformationPane (doc) {
       'class': 'comment-list'
     });
     for (let comment of doc.getComments()) {
+      
+      let commentPanel = $('<div/>', {
+        'class': 'panel panel-default'
+      });
+      
       let commentText = $('<div/>', {
-        'class': 'comment-text'
+        'class': 'comment-text panel-body'
       }).text(comment.text);
       let commentInfo = $('<span/>', {
-        'class': 'comment-info'
+        'class': 'comment-info panel-heading'
       }).text(['by', comment.user,
                'on', comment.date.toDateString()].join(' '));
+      
+      commentPanel.append(commentInfo).append(commentText);
+      
       commentList.append(
-        $('<li/>').append(commentText).append(commentInfo)
+        $('<li/>').append(commentPanel)
       );
     }
     commentsPane.append(commentList);
@@ -370,36 +378,6 @@ function documentInformationPane (doc) {
   controlPane.append(showCommentsButton);
 
   // The history pane **********************************************************
-
-  let refreshHistoryPane = function () {
-    historyPane.empty();
-    let eventList = $('<ul/>', {
-      'class': 'event-list'
-    });
-    
-    
-    for (let event of doc.getHistory()) {
-      let historyItemPanel = $('<div/>', {
-      'class': 'panel panel-default'
-      });
-      
-      let date = $('<div/>', {
-        'class': 'event-date panel-heading'
-      }).text(event.date.toString());
-      
-      let description = $('<span/>', {
-        'class': 'event-description panel-body'
-      }).text(event.description);
-
-      historyItemPanel.append(date).append(description);
-      eventList.append(
-        $('<li/>', {
-          'class': 'history-list'
-        }).append(historyItemPanel)
-      );
-    }
-    historyPane.append(eventList);
-  };
 
   let showHistoryButton = $('<button/>', {
     type: 'button',
