@@ -358,7 +358,7 @@ hr {
     top: 15%;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
     width: 300%;
-    min-width: 500px;
+    min-width: 580px;
 }
 
 .document-details-pane {
@@ -458,7 +458,7 @@ hr {
     top: 15%;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
     width: 300%;
-    min-width: 560px;
+    min-width: 580px;
 }
 
 .tag-details-pane {
