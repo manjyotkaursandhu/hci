@@ -666,7 +666,7 @@ function tagInformationPane (tag) {
     class: 'btn btn-link nav-btn-style',
     click: function () {
       if (historyPane.is(':visible')) {
-        showHistoryButton.text('Show history');
+        showHistoryButton.text('History');
         showHistoryButton.append('\u00A0<span class="glyphicon glyphicon-time" aria-hidden="true"></span>');
         historyPane.detach();
       } else {
