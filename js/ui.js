@@ -91,17 +91,25 @@ function addDocumentFilterAsData (option, value, element) {
 //For filtering documents, on view documents page
 function generateDocumentFilterItem (pane, filterList) {
 
+  let formInline = $('<div/>', {
+    class: 'form-inline'
+  });
+
   let filterItem = $('<li/>');
-  let criterion = $('<select/>')
-      .append($('<option/>').text('name'))
-      .append($('<option/>').text('owner'))
-      .append($('<option/>').text('tag'))
-      .append($('<option/>').text('date'));
-  let pattern = $('<input/>', { type: 'text' });
-  
+
+  let criterion = $('<select/>', {
+    class: 'form-control'
+  }).append($('<option/>').text('name')).append($('<option/>').text('owner')).append($('<option/>').text('date'));
+      
+  let pattern = $('<input/>', { 
+    type: 'text', 
+    placeholder: 'Filter for...',
+    class: 'form-control' });
+    
   //button to add a filter
   let addFilterButton = $('<button/>', {
     type: 'button',
+    class: 'btn btn-default',
     click: function () {
       addDocumentFilterAsData(criterion.val(), pattern.val(), filterItem);
       addFilterButton.detach();
@@ -116,6 +124,7 @@ function generateDocumentFilterItem (pane, filterList) {
   //button to update an already added filter
   let updateFilterButton = $('<button/>', {
     type: 'button',
+    class: 'btn btn-default',
     click: function () {
       addDocumentFilterAsData(criterion.val(), pattern.val(), filterItem);
       refreshDocumentList(pane, filterList);
@@ -129,8 +138,6 @@ function generateDocumentFilterItem (pane, filterList) {
   criterion.after('');
   return filterItem;
 }
-
-
 
 function refreshDocumentList (targetPane, filterList) {
   targetPane.empty()
@@ -437,7 +444,7 @@ let generateTagFilterItem = function (pane, filterList) {
       
   let pattern = $('<input/>', { 
     type: 'text', 
-    placeholder: 'Filter for..',
+    placeholder: 'Filter for...',
     class: 'form-control' });
     
   let addFilterButton = $('<button/>', {
