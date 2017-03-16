@@ -112,9 +112,10 @@ function generateDocumentFilterItem (pane, filterList) {
       
   let pattern = $('<input/>', { 
     type: 'text', 
-    placeholder: 'Filter by...',
+    placeholder: 'Filter for...',
     class: 'form-control' });
     
+  //button to add a filter
   let addFilterButton = $('<button/>', {
     type: 'button',
     class: 'btn btn-default',
@@ -132,6 +133,7 @@ function generateDocumentFilterItem (pane, filterList) {
   //button to update an already added filter
   let updateFilterButton = $('<button/>', {
     type: 'button',
+    class: 'btn btn-default',
     click: function () {
       addDocumentFilterAsData(criterion.val(), pattern.val(), filterItem);
       refreshDocumentList(pane, filterList);
@@ -162,8 +164,8 @@ function documentInformationPane (doc) {
   let historyPane = $('<div/>', { 'class': 'document-history-pane' });
 
   let mainPane = $('<div/>', { 'class': 'document-information-pane' })
-      .append(detailsPane)
-      .append(controlPane);
+      .append(controlPane)
+      .append(detailsPane);
 
   // The details pane **********************************************************
 
@@ -207,7 +209,8 @@ function documentInformationPane (doc) {
 
     let updateButton = $('<button/>', {
       type: 'button',
-      text: 'Update file',
+      text: 'Update',
+      class: 'btn btn-link nav-btn-style',
       click: function () {
         $('<input/>', {
           type: 'file',
@@ -224,11 +227,14 @@ function documentInformationPane (doc) {
         }).click();
       }
     });
+
+    updateButton.append('\u00A0<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>');
     editPane.append(updateButton);
 
     let editButton = $('<button/>', {
       type: 'button',
       text: 'Edit',
+      class: 'btn btn-link nav-btn-style',
       click: function () {
         owners.prop('readonly', false);
         description.prop('readonly', false);
@@ -240,11 +246,14 @@ function documentInformationPane (doc) {
         editPane.append(cancelButton).append(saveButton);
       }
     });
+
+    editButton.append('\u00A0<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>');
     editPane.append(editButton);
 
     let cancelButton = $('<button/>', {
       type: 'button',
       text: 'Cancel',
+      class: 'btn btn-link nav-btn-style',
       click: function () {
         owners.val(doc.ownersToString()).prop('readonly', true);
         description.val(doc.getDescription()).prop('readonly', true);
@@ -257,10 +266,13 @@ function documentInformationPane (doc) {
         editPane.append(editButton);
       }
     });
+    
+    cancelButton.append('\u00A0<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>');
 
     let saveButton = $('<button/>', {
       type: 'button',
       text: 'Save',
+      class: 'btn btn-link nav-btn-style',
       click: function () {
         let ownerList = parseCSV(owners.val());
         if (ownerList.length == 0) {
@@ -294,6 +306,9 @@ function documentInformationPane (doc) {
         editPane.append(editButton);
       }
     });
+
+    saveButton.append('\u00A0<span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>');
+
   } // DMS.canEdit(doc)
 
   // The comments pane *********************************************************
@@ -335,18 +350,23 @@ function documentInformationPane (doc) {
 
   let showCommentsButton = $('<button/>', {
     type: 'button',
-    text: 'Discussion Thread',
+    text: 'Comment',
+    class: 'btn btn-link nav-btn-style',
     click: function () {
       if (commentsPane.is(':visible')) {
-        showCommentsButton.text('Discussion Thread');
+        showCommentsButton.text('Comment');
+        showCommentsButton.append('\u00A0<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>');
         commentsPane.detach();
       } else {
         showCommentsButton.text('Hide Thread');
+        showCommentsButton.append('\u00A0<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>');
         commentsPane.appendTo(mainPane);
         refreshCommentsPane();
       }
     }
   });
+
+  showCommentsButton.append('\u00A0<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>');
   controlPane.append(showCommentsButton);
 
   // The history pane **********************************************************
@@ -384,17 +404,22 @@ function documentInformationPane (doc) {
   let showHistoryButton = $('<button/>', {
     type: 'button',
     text: 'History',
+    class: 'btn btn-link nav-btn-style',
     click: function () {
       if (historyPane.is(':visible')) {
         showHistoryButton.text('History');
+        showHistoryButton.append('\u00A0<span class="glyphicon glyphicon-time" aria-hidden="true"></span>');
         historyPane.detach();
       } else {
         showHistoryButton.text('Hide History');
+        showHistoryButton.append('\u00A0<span class="glyphicon glyphicon-time" aria-hidden="true"></span>');
         historyPane.appendTo(mainPane);
         refreshHistoryPane();
       }
     }
   });
+
+  showHistoryButton.append('\u00A0<span class="glyphicon glyphicon-time" aria-hidden="true"></span>');
   controlPane.append(showHistoryButton);
 
   return mainPane;
@@ -440,7 +465,7 @@ let generateTagFilterItem = function (pane, filterList) {
       
   let pattern = $('<input/>', { 
     type: 'text', 
-    placeholder: 'Filter by...',
+    placeholder: 'Filter for...',
     class: 'form-control' });
     
   let addFilterButton = $('<button/>', {
@@ -535,8 +560,6 @@ function tagInformationPane (tag) {
     editButton.append('<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>');
     editPane.append(editButton);
     
-    
-
     let cancelButton = $('<button/>', {
       type: 'button',
       text: 'Cancel',
