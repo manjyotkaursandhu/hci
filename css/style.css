@@ -268,6 +268,17 @@ hr {
 
 /* Document management */
 
+.document-filter-title {
+    font-weight:bold;
+    color: white;
+    text-align:left;
+    background-color:#70db70;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0px;
+    padding-left: 0px;
+}
+
 .document-filter-list {
 /*background: #cce5ff;*/
     position: absolute;
@@ -289,6 +300,17 @@ hr {
     padding-top: 50pt;
 }
 
+#documentsFilterPane {
+    right: 0px;
+    top: 6%;
+    width: 30%;
+    height: 40%;
+    position: absolute;
+    min-width: 300px;
+    /*box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);*/
+    
+}
+
 .document-name {
     width: 15%;
     min-width: 150px;
@@ -303,22 +325,35 @@ hr {
     position: absolute;
 }
 
+.form-inline {
+    float: right;
+}
+
+.btn-btn-default {
+    float: right;
+}
+
 .document-name:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     background-color: #aaaaaa;
 }
 
 .document-information-pane {
-    margin-left: 125%;
+    margin-left: 110%;
+    top: 15%;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
     width: 300%;
     min-width: 500px;
 }
 
 .document-details-pane {
-    position: relative;
-    display: inline-block;
-    
+    width: 100%;
+    padding: 20px;
+}
+
+.tag-details-pane {
+    width: 100%;
+    padding: 20px;
 }
 
 .document-details {
@@ -327,24 +362,14 @@ hr {
 
 .document-control-pane {
     position: relative;
-    /*left: 50px;*/
-    float:left;
-    width: 25%;
-    min-width: 100px;
-}
-
-.document-control-pane button {
-    margin-top: 5px;
-    display: block;
-    border-radius: 5px;
-    width: 95%;
-    cursor:pointer;
+    margin: auto;
+    padding: 10px;
+    width: 100%;
     background-color: #70db70;
-    color: #FFFFFF;
-    border: 0px;
-    float: right;
-    
-    
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
 }
 
 .document-comments-pane {
@@ -432,14 +457,6 @@ hr {
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
     width: 300%;
     min-width: 560px;
-}
-
-.document-information-pane {
-    margin-left: 110%;
-    top: 15%;
-    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
-    width: 300%;
-    min-width: 700px;
 }
 
 .tag-details-pane {
