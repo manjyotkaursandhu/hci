@@ -597,20 +597,29 @@ function tagInformationPane (tag) {
     
     deleteButton.append('\u00A0<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>');
     controlPane.append(deleteButton);
-
+    
     let mapButton = $('<button/>', {
       type: 'button',
       text: 'Map tag',
+      'data-toggle': 'modal',
+      'data-target': '#mapTagModal',
       class: 'btn btn-link nav-btn-style',
       click: function () {
-        let newTagName = prompt('To which tag would you like to map \'' +
-                                tag.getName() + '\'?');
-        if (newTagName != null)
-          DMS.mapTag(tag, newTagName, {
+        $('#mapTagText').text('To which tag would you like to map \'' + tag.getName() + '\'?');
+        
+        $('#confirmMapButton').click(function() {
+          var newTagName = $('#mapTagInput').val();
+          
+          alert(newTagName);
+          if (newTagName != null)
+            DMS.mapTag(tag, newTagName, {
             oncomplete: function () {
               $('#listTagsButton').click();
             }
           });
+          
+        });
+  
       }
     });
     

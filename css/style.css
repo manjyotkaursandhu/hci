@@ -547,3 +547,11 @@ hr {
 .history-list {
     list-style-type: none;
 }
+
+.confirmMapButton {
+    background-color: transparent;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
