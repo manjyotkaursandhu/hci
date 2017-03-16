@@ -495,7 +495,7 @@ function tagInformationPane (tag) {
 
     let editButton = $('<button/>', {
       type: 'button',
-      text: ' Edit',
+      text: 'Edit',
       class: 'btn btn-link nav-btn-style',
       click: function () {
                           owners.prop('readonly', false);
@@ -506,7 +506,7 @@ function tagInformationPane (tag) {
                          }
     });
     
-    editButton.append('<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>');
+    editButton.append('\u00A0<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>');
     editPane.append(editButton);
     
     
@@ -525,7 +525,7 @@ function tagInformationPane (tag) {
       }
     });
     
-    cancelButton.append('<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>');
+    cancelButton.append('\u00A0<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>');
 
     let saveButton = $('<button/>', {
       type: 'button',
@@ -551,7 +551,7 @@ function tagInformationPane (tag) {
       }
     });
     
-    saveButton.append('<span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>');
+    saveButton.append('\u00A0<span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>');
 
     let deleteButton = $('<button/>', {
       type: 'button',
@@ -569,7 +569,7 @@ function tagInformationPane (tag) {
       }
     });
     
-    deleteButton.append('<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>');
+    deleteButton.append('\u00A0<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>');
     controlPane.append(deleteButton);
 
     let mapButton = $('<button/>', {
@@ -588,7 +588,7 @@ function tagInformationPane (tag) {
       }
     });
     
-    mapButton.append('<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>');
+    mapButton.append('\u00A0<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>');
     controlPane.append(mapButton);
   } // DMS.canEdit(tag)
 
@@ -610,7 +610,7 @@ function tagInformationPane (tag) {
     }
   });
   
-  showHistoryButton.append('<span class="glyphicon glyphicon-time" aria-hidden="true"></span>');
+  showHistoryButton.append('\u00A0<span class="glyphicon glyphicon-time" aria-hidden="true"></span>');
   controlPane.append(showHistoryButton);
 
   return mainPane;
