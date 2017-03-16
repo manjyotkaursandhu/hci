@@ -273,9 +273,11 @@ $(document).ready(function() {
     
     let listDocumentsPane = $('#listDocumentsPane');
     listDocumentsPane.empty().show();
+      
     let documentsFilterPane = $('#documentsFilterPane')
-    documentsFilterPane.empty().show();
-
+    documentsFilterPane.empty().show(); 
+    let tagsFilterPane = $('#tagsFilterPane')
+    tagsFilterPane.hide();
     /**
     let documentListPane = $('#documentFilterPane', {
       'class': 'document-list-pane'
@@ -293,6 +295,7 @@ $(document).ready(function() {
     $('#tagsMain').children().empty();
     filterList.append(generateDocumentFilterItem(documentListPane, filterList));
     refreshDocumentList(documentListPane, filterList);
+      
   });
 
 

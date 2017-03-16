@@ -427,6 +427,36 @@ function documentInformationPane (doc) {
 
   // The history pane **********************************************************
 
+  let refreshHistoryPane = function () {
+    historyPane.empty();
+    let eventList = $('<ul/>', {
+      'class': 'event-list'
+    });
+    
+    
+    for (let event of doc.getHistory()) {
+      let historyItemPanel = $('<div/>', {
+      'class': 'panel panel-default'
+      });
+      
+      let date = $('<div/>', {
+        'class': 'event-date panel-heading'
+      }).text(event.date.toString());
+      
+      let description = $('<span/>', {
+        'class': 'event-description panel-body'
+      }).text(event.description);
+
+      historyItemPanel.append(date).append(description);
+      eventList.append(
+        $('<li/>', {
+          'class': 'history-list'
+        }).append(historyItemPanel)
+      );
+    }
+    historyPane.append(eventList);
+  };
+
   let showHistoryButton = $('<button/>', {
     type: 'button',
     text: 'History',
@@ -684,10 +714,12 @@ function tagInformationPane (tag) {
     class: 'btn btn-link nav-btn-style',
     click: function () {
       if (historyPane.is(':visible')) {
-        showHistoryButton.text('Show history');
+        showHistoryButton.text('History');
+        showHistoryButton.append('\u00A0<span class="glyphicon glyphicon-time" aria-hidden="true"></span>');
         historyPane.detach();
       } else {
         showHistoryButton.text('Hide history');
+        showHistoryButton.append('\u00A0<span class="glyphicon glyphicon-time" aria-hidden="true"></span>');
         historyPane.empty().append(eventList(tag));
         historyPane.appendTo(mainPane);
       }
