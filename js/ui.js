@@ -667,9 +667,11 @@ function tagInformationPane (tag) {
     click: function () {
       if (historyPane.is(':visible')) {
         showHistoryButton.text('Show history');
+        showHistoryButton.append('\u00A0<span class="glyphicon glyphicon-time" aria-hidden="true"></span>');
         historyPane.detach();
       } else {
         showHistoryButton.text('Hide history');
+        showHistoryButton.append('\u00A0<span class="glyphicon glyphicon-time" aria-hidden="true"></span>');
         historyPane.empty().append(eventList(tag));
         historyPane.appendTo(mainPane);
       }
