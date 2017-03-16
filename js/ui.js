@@ -154,8 +154,8 @@ function documentInformationPane (doc) {
   let historyPane = $('<div/>', { 'class': 'document-history-pane' });
 
   let mainPane = $('<div/>', { 'class': 'document-information-pane' })
-      .append(detailsPane)
-      .append(controlPane);
+      .append(controlPane)
+      .append(detailsPane);
 
   // The details pane **********************************************************
 
