@@ -138,16 +138,6 @@ body {
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 25px 0 rgba(0, 0, 0, 0.19);
 }
 
-#tagsFilterPane {
-    right: 2%;
-    top: 12%;
-     width: 30%;
-     height: 40%;
-     position: fixed;
-    /*box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);*/
-    
-}
-
 /* Log in */
 
 /* For log in button */
@@ -264,6 +254,15 @@ hr {
     border: 0px;
 }
 
+.dropdown-menu {
+    min-width: 122px;
+}
+
+/*
+.dropdown-menu > li {
+    max-width: 122px;
+}
+/*
 
 /* User management */
 
@@ -366,8 +365,8 @@ hr {
    background-color:#70db70;
    text-transform: uppercase;
    letter-spacing: 1px;
-   padding: 5px;
-   padding-left: 10px;
+   padding: 0px;
+   padding-left: 0px;
 }
 
 .tag-filter-list {
@@ -375,6 +374,7 @@ hr {
     padding: 10px;
     list-style: none;
     width: 100%;
+    min-width: 300px;
 }
 
 .tag-list-pane {
@@ -388,6 +388,17 @@ hr {
 .tag-list-pane li {
     list-style-type: none;
     padding-top: 50pt;
+}
+
+#tagsFilterPane {
+    right: 0px;
+    top: 6%;
+     width: 30%;
+     height: 40%;
+     position: fixed;
+     min-width: 300px;
+    /*box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);*/
+    
 }
 
 .tag-name {
@@ -404,6 +415,13 @@ hr {
     position: absolute;
 }
 
+.form-inline {
+    float: right;
+}
+
+.btn-btn-default {
+    float: right;
+}
 
 .tag-name:hover {
     box-shadow: 0 3px 5px 0 rgba(0,0,0,0.2);
@@ -415,7 +433,7 @@ hr {
     top: 15%;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
     width: 300%;
-    min-width: 500px;
+    min-width: 560px;
 }
 
 .document-information-pane {
@@ -444,6 +462,10 @@ hr {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
+}
+
+.btn.btn-link.nav-btn-style {
+    text-decoration: none;
 }
 
 .tag-history-pane {}
