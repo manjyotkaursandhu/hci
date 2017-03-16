@@ -414,7 +414,15 @@ hr {
     margin-left: 110%;
     top: 15%;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
-    width: 180%;
+    width: 300%;
+    min-width: 500px;
+}
+
+.document-information-pane {
+    margin-left: 110%;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    width: 300%;
+    min-width: 500px;
 }
 
 .tag-details-pane {
