@@ -266,9 +266,9 @@ class Document extends DMSObject {
   makePrivate(priv = true) {
     this.isprivate = priv;
     if (this.private)
-      this.addEvent('Made private.');
+      this.addEvent('\u00A0\u00A0\u00A0 Made private.');
     else
-      this.addEvent('Made public.');
+      this.addEvent('\u00A0\u00A0\u00A0 Made public.');
     return this;
   }
   
@@ -491,7 +491,7 @@ $(document).ready(function() {
         .setDescription(description)
         .setTagsFromList(tags)
         .makePrivate(priv)
-        .addEvent('Original document uploaded.');
+        .addEvent('\u00A0\u00A0\u00A0 Original document uploaded.');
     let transaction = DMS.addObject(DMS.Documents, doc);
     if ('oncomplete' in request)
       transaction.oncomplete = request.oncomplete;
@@ -530,7 +530,7 @@ $(document).ready(function() {
     let tag = new Tag(name)
         .setOwnersFromList([DMS.userName, ...owners.slice(0)])
         .setDescription(description)
-        .addEvent('Tag created.');
+        .addEvent('\u00A0 Tag created.');
     let transaction = DMS.addObject(DMS.Tags, tag);
     if ('oncomplete' in request)
       transaction.oncomplete = request.oncomplete;
