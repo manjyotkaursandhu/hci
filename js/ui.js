@@ -379,6 +379,36 @@ function documentInformationPane (doc) {
 
   // The history pane **********************************************************
 
+  let refreshHistoryPane = function () {
+    historyPane.empty();
+    let eventList = $('<ul/>', {
+      'class': 'event-list'
+    });
+    
+    
+    for (let event of doc.getHistory()) {
+      let historyItemPanel = $('<div/>', {
+      'class': 'panel panel-default'
+      });
+      
+      let date = $('<div/>', {
+        'class': 'event-date panel-heading'
+      }).text(event.date.toString());
+      
+      let description = $('<span/>', {
+        'class': 'event-description panel-body'
+      }).text(event.description);
+
+      historyItemPanel.append(date).append(description);
+      eventList.append(
+        $('<li/>', {
+          'class': 'history-list'
+        }).append(historyItemPanel)
+      );
+    }
+    historyPane.append(eventList);
+  };
+
   let showHistoryButton = $('<button/>', {
     type: 'button',
     text: 'History',
