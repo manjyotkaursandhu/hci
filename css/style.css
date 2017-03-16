@@ -279,6 +279,7 @@ hr {
     padding-left: 0px;
 }
 
+/*************************************************/
 .document-filter-list {
 /*background: #cce5ff;*/
     position: absolute;
@@ -286,6 +287,7 @@ hr {
     top: 55px;
     list-style: none;
 }
+/*************************************************/
 
 .document-list-pane {
     margin-top: -80px;
@@ -333,10 +335,12 @@ hr {
     float: right;
 }
 
+/*************************************************/
 .document-name:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     background-color: #aaaaaa;
 }
+/*************************************************/
 
 .document-information-pane {
     margin-left: 110%;
@@ -347,11 +351,6 @@ hr {
 }
 
 .document-details-pane {
-    width: 100%;
-    padding: 20px;
-}
-
-.tag-details-pane {
     width: 100%;
     padding: 20px;
 }
@@ -372,8 +371,11 @@ hr {
     font-weight: bold;
 }
 
-.document-comments-pane {
+.btn.btn-link.nav-btn-style {
+    text-decoration: none;
 }
+
+.document-comments-pane {}
 
 .document-history-pane {}
 
