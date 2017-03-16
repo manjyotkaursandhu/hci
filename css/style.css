@@ -272,13 +272,45 @@ hr {
 
 /* Document management */
 
+#documentsFilterPane {
+    right: 0px;
+    top: 6%;
+     width: 30%;
+     height: 40%;
+     position: fixed;
+     min-width: 300px;
+    /*box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);*/
+    
+}
+
+/* For tag filter side bar */
+.document-filter-title {
+   font-weight:bold;
+   color: white;
+   text-align:left;
+   background-color:#70db70;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   padding: 0px;
+   padding-left: 0px;
+}
+
 .document-filter-list {
-/*background: #cce5ff;*/
     position: absolute;
     right: 6px;
     top: 55px;
     list-style: none;
 }
+
+/*
+.document-filter-list {
+    position: absolute;
+    padding: 10px;
+    list-style: none;
+    width: 100%;
+    min-width: 300px;
+}
+*/
 
 .document-list-pane {
     margin-top: -80px;
@@ -387,7 +419,7 @@ hr {
     min-width: 200px;
 }
     
-.tag-list-pane li {
+.tag-list-pane li:not(.history-list) {
     list-style-type: none;
     padding-top: 50pt;
 }
@@ -495,9 +527,23 @@ hr {
 
 /* Events */
 
-.event-list {}
+.event-list {
+    padding: 20px;
+}
 
-.event-date {}
+.event-date {
+    font-weight: bold;
+}
 
-.event-description {}
+.event-description {
+    font-style: italic;
+    padding-left: 10px;
+}
 
+.history-list {
+    padding: 5px;
+}
+
+.history-list {
+    list-style-type: none;
+}

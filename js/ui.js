@@ -14,15 +14,24 @@ function eventList (dmsObject) {
   let list = $('<ul/>', {
     'class': 'event-list'
   });
+  
   for (let event of dmsObject.getHistory()) {
+    let historyItemPanel = $('<div/>', {
+      'class': 'panel panel-default'
+    });
+    
     let date = $('<div/>', {
-      'class': 'event-date'
+      'class': 'event-date panel-heading'
     }).text(event.date.toString());
-    let description = $('<span/>', {
-      'class': 'event-description'
+    let description = $('<div/>', {
+      'class': 'event-description panel-body'
     }).text(event.description);
+    
+    historyItemPanel.append(date).append(description);
     list.append(
-      $('<li/>').append(date).append(description)
+      $('<li/>', {
+        'class': 'history-list'
+      }).append(historyItemPanel)
     );
   }
   return list;
@@ -91,21 +100,28 @@ function addDocumentFilterAsData (option, value, element) {
 //For filtering documents, on view documents page
 function generateDocumentFilterItem (pane, filterList) {
 
+  let formInline = $('<div/>', {
+    class: 'form-inline'
+  });
+
   let filterItem = $('<li/>');
-  let criterion = $('<select/>')
-      .append($('<option/>').text('name'))
-      .append($('<option/>').text('owner'))
-      .append($('<option/>').text('tag'))
-      .append($('<option/>').text('date'));
-  let pattern = $('<input/>', { type: 'text' });
-  
-  //button to add a filter
+
+  let criterion = $('<select/>', {
+    class: 'form-control'
+  }).append($('<option/>').text('name')).append($('<option/>').text('owner')).append($('<option/>').text('date'));
+      
+  let pattern = $('<input/>', { 
+    type: 'text', 
+    placeholder: 'Filter by...',
+    class: 'form-control' });
+    
   let addFilterButton = $('<button/>', {
     type: 'button',
+    class: 'btn btn-default',
     click: function () {
       addDocumentFilterAsData(criterion.val(), pattern.val(), filterItem);
       addFilterButton.detach();
-      filterItem.append(updateFilterButton);
+      formInline.append(updateFilterButton);
       filterItem.after(generateDocumentFilterItem(pane, filterList));
       refreshDocumentList(pane, filterList);
     }
@@ -124,13 +140,12 @@ function generateDocumentFilterItem (pane, filterList) {
   
   updateFilterButton.append('<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>');
 
-  filterItem.append(criterion).append(pattern).append(addFilterButton);
+  formInline.append(criterion).append(pattern).append(addFilterButton);
+  filterItem.append(formInline);
   criterion.before('');
   criterion.after('');
   return filterItem;
 }
-
-
 
 function refreshDocumentList (targetPane, filterList) {
   targetPane.empty()
@@ -341,15 +356,26 @@ function documentInformationPane (doc) {
     let eventList = $('<ul/>', {
       'class': 'event-list'
     });
+    
+    
     for (let event of doc.getHistory()) {
+      let historyItemPanel = $('<div/>', {
+      'class': 'panel panel-default'
+      });
+      
       let date = $('<div/>', {
-        'class': 'event-date'
+        'class': 'event-date panel-heading'
       }).text(event.date.toString());
+      
       let description = $('<span/>', {
-        'class': 'event-description'
+        'class': 'event-description panel-body'
       }).text(event.description);
+
+      historyItemPanel.append(date).append(description);
       eventList.append(
-        $('<li/>').append(date).append(description)
+        $('<li/>', {
+          'class': 'history-list'
+        }).append(historyItemPanel)
       );
     }
     historyPane.append(eventList);
@@ -414,7 +440,7 @@ let generateTagFilterItem = function (pane, filterList) {
       
   let pattern = $('<input/>', { 
     type: 'text', 
-    placeholder: 'Filter for..',
+    placeholder: 'Filter by...',
     class: 'form-control' });
     
   let addFilterButton = $('<button/>', {
@@ -506,7 +532,7 @@ function tagInformationPane (tag) {
                          }
     });
     
-    editButton.append('\u00A0<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>');
+    editButton.append('<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>');
     editPane.append(editButton);
     
     

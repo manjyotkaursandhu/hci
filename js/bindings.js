@@ -272,23 +272,34 @@ $(document).ready(function() {
   $('#listDocumentsButton').click(function() {
     
     let listDocumentsPane = $('#listDocumentsPane');
-    listDocumentsPane.empty().show().siblings().hide();
+    listDocumentsPane.empty().show();
+
+    let documentsFilterPane = $('#documentsFilterPane')
+    documentsFilterPane.empty().show();
+
+    /**
+    let documentListPane = $('#documentFilterPane', {
+      'class': 'document-list-pane'
+    }).appendTo(listDocumentsPane);
+    **/
 
     let filterList = $('<ol/>', {
       'class': 'document-filter-list'
-    }).appendTo(listDocumentsPane);
-
+    }).appendTo(documentsFilterPane);
+    
     let documentListPane = $('<div/>', {
       'class': 'document-list-pane'
     }).appendTo(listDocumentsPane);
 
+    $('#tagsMain').children().empty();
     filterList.append(generateDocumentFilterItem(documentListPane, filterList));
     refreshDocumentList(documentListPane, filterList);
-    $('#tagsMain').children().empty();
   });
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+/*
   // Search management **********************************************
   $('#searchButton').click(function() {
     
@@ -307,6 +318,7 @@ $(document).ready(function() {
     refreshDocumentList(documentListPane, filterList);
     $('#tagsMain').children().empty();
   });
+*/
 
 /*
   $('#searchButton').click(function() {
