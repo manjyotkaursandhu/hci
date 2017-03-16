@@ -42,6 +42,16 @@ body {
     height: 100%;
 }
 
+#documentsFilterPane {
+    right: 0px;
+    top: 6%;
+    width: 30%;
+    height: 40%;
+    position: absolute;
+    min-width: 330px;
+    /*box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);*/
+}
+
 #listDocumentsPane{
     background: transparent;
     height: 100%;
@@ -53,6 +63,16 @@ body {
     height: 100%;
 }
 
+#tagsFilterPane {
+    right: 0px;
+    top: 6%;
+     width: 30%;
+     height: 40%;
+     position: absolute;
+     min-width: 300px;
+    /*box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);*/
+    
+}
 
 #uploadDocumentPane {
     width: 100%;
@@ -282,21 +302,12 @@ hr {
 /*************************************************/
 .document-filter-list {
     position: absolute;
-    right: 6px;
-    top: 55px;
-    list-style: none;
-}
-/*************************************************/
-
-/*
-.document-filter-list {
-    position: absolute;
     padding: 10px;
     list-style: none;
     width: 100%;
     min-width: 300px;
 }
-*/
+/*************************************************/
 
 .document-list-pane {
     margin-top: -80px;
@@ -311,16 +322,7 @@ hr {
     padding-top: 50pt;
 }
 
-#documentsFilterPane {
-    right: 0px;
-    top: 6%;
-    width: 30%;
-    height: 40%;
-    position: absolute;
-    min-width: 300px;
-    /*box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);*/
-    
-}
+
 
 .document-name {
     width: 15%;
@@ -422,17 +424,6 @@ hr {
 .tag-list-pane li:not(.history-list) {
     list-style-type: none;
     padding-top: 50pt;
-}
-
-#tagsFilterPane {
-    right: 0px;
-    top: 6%;
-     width: 30%;
-     height: 40%;
-     position: absolute;
-     min-width: 300px;
-    /*box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);*/
-    
 }
 
 .tag-name {
