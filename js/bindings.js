@@ -273,7 +273,7 @@ $(document).ready(function() {
     
     let listDocumentsPane = $('#listDocumentsPane');
     listDocumentsPane.empty().show();
-
+      tagsFilterPane.hide();
     let documentsFilterPane = $('#documentsFilterPane')
     documentsFilterPane.empty().show();
 
