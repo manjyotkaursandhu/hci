@@ -254,10 +254,6 @@ hr {
     border: 0px;
 }
 
-.dropdown-toggle.nav-btn-style:hover {
-    background-color: grey;
-}
-
 .dropdown:hover .dropdown-menu {
     display: block;
 }
