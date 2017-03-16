@@ -411,7 +411,10 @@ hr {
     text-decoration: none;
 }
 
-.document-comments-pane {}
+.document-comments-pane {
+    width: 80%;
+    margin: auto;
+}
 
 .document-history-pane {}
 
@@ -535,29 +538,6 @@ hr {
 
 .comment-list {}
 
-/*
-.comment-list li {
-    position: relative;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-    color: #f5f5f5;
-    background-color: #333;
-}
-
-
-.comment-text {
-      border-top-color: #337ab7;
-}
-
-
-.comment-info {
-    color: #fff;
-  background-color: #337ab7;
-  border-color: #337ab7;
-}*/
 
 .comment-text {
     
@@ -567,6 +547,16 @@ hr {
     
 }
 
+.comment-text-box {
+    margin-top:10px;
+    width: 100%;
+    float: right;
+}
+
+.comment-button {
+    margin-top: 10px;
+    float: right;
+}
 
 /* Events */
 
@@ -597,4 +587,8 @@ hr {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
+}
+
+.thumbnail {
+    padding:0px;
 }

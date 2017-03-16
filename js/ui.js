@@ -174,17 +174,20 @@ function documentInformationPane (doc) {
 
   let owners = $('<input/>', {
     type: 'text',
+    class: 'form-control uploadDocFields',
     readonly: true
   }).val(doc.ownersToString());
   addProperty(details, 'Owners', owners);
 
   let description = $('<textarea/>', {
-    readonly: true
+    readonly: true,
+    class: 'form-control uploadDocFields'
   }).val(doc.getDescription());
   addProperty(details, 'Description', description);
 
   let tags = $('<input/>', {
     type: 'text',
+    class: 'form-control uploadDocFields',
     readonly: true
   }).val(doc.tagsToString());
   addProperty(details, 'Tags', tags);
@@ -316,10 +319,49 @@ function documentInformationPane (doc) {
   let refreshCommentsPane = function () {
     commentsPane.empty();
 
+    /*
+    Order of comment div layers:
+    commentsPane
+      commentList
+          row
+            col-sm-1 (colThumb)
+              thumbnail
+                PIC OF THUMBNAIL
+            col-sm-5 (colComment)
+              panel panel-default (commentPanel)
+                panel-heading (commentInfo)
+                panel-body (commentText)
+    */
+    
     let commentList = $('<ol/>', {
       'class': 'comment-list'
     });
     for (let comment of doc.getComments()) {
+      let row = $('<div/>', {
+        'class': 'row',
+        'style': 'margin-top: -30px'
+      })
+      
+      let colThumb = $('<div/>', {
+        'class': 'col-sm-2'
+      })
+      
+      let thumbnail = $('<div/>', {
+        'class': 'thumbnail'
+      })
+      
+      let thumbnailPic = $('<img/>', {
+        'class': 'img-responsive user-photo',
+        'src': 'https://ssl.gstatic.com/accounts/ui/avatar_2x.png'
+      })
+      
+      thumbnail.append(thumbnailPic);
+      colThumb.append(thumbnail);
+      row.append(colThumb);
+      
+      let colComment = $('<div/>', {
+        'class': 'col-sm-10'
+      });
       
       let commentPanel = $('<div/>', {
         'class': 'panel panel-default'
@@ -329,22 +371,28 @@ function documentInformationPane (doc) {
         'class': 'comment-text panel-body'
       }).text(comment.text);
       let commentInfo = $('<span/>', {
-        'class': 'comment-info panel-heading'
-      }).text(['by', comment.user,
-               'on', comment.date.toDateString()].join(' '));
+        'class': 'comment-info panel-heading',
+      }).text([comment.user,
+               ' - on', comment.date.toDateString()].join(' '));
       
       commentPanel.append(commentInfo).append(commentText);
-      
+      colComment.append(commentPanel);
+      row.append(colComment);
       commentList.append(
-        $('<li/>').append(commentPanel)
+        $('<li/>').append(row)
       );
     }
     commentsPane.append(commentList);
 
-    let newComment = $('<textarea/>');
+    let newComment = $('<textarea/>', {
+      class: 'form-control comment-text-box',
+      placeholder: 'Enter comment...',
+    });
+    
     let addComment = $('<button/>', {
       type: 'button',
-      text: 'Add comment',
+      text: 'Comment',
+      class: 'btn btn-success comment-button',
       click: function () {
         if (newComment.val() != '') {
           doc.addComment(DMS.createComment(newComment.val()));
@@ -353,7 +401,7 @@ function documentInformationPane (doc) {
         }
       }
     });
-    commentsPane.append(newComment).append(addComment);
+    commentList.append(newComment).append(addComment);
   };
 
   let showCommentsButton = $('<button/>', {
