@@ -200,7 +200,7 @@ function documentInformationPane (doc) {
       disabled: true,
       checked: doc.isPrivate()
     });
-    addProperty(details, 'Is private', isprivate);
+    addProperty(details, 'Hide', isprivate);
   }
 
   detailsPane.append(details);
