@@ -230,7 +230,7 @@ $(document).ready(function() {
       type: 'checkbox',
       checked: true
     });
-    addProperty(details, 'Is private', isprivate);
+    addProperty(details, 'Hide', isprivate);
 
 
     let uploadButton = $('<button/>', {
