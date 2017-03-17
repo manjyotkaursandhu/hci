@@ -4,9 +4,9 @@
 3. Documents View (Nagivation bar)
     Edit
     
-      Save
+    Save
       
-       Cancel
+    Cancel
        
     History
     
