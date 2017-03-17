@@ -232,6 +232,10 @@ hr {
     letter-spacing: 1px;
 }
 
+.nav-btn-style:hover {
+    color: darkgreen !important;
+}
+
 .navbar-default {
     background-color: #70db70;
     border: 0px;
